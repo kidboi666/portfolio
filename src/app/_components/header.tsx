@@ -14,7 +14,7 @@ const navItems = [
 export function Header() {
   const pathname = usePathname();
   return (
-    <header className="sticky top-0 z-50 w-full justify-center rounded-md py-4 shadow-lg">
+    <header className="sticky top-0 z-50 w-full justify-center rounded-md bg-background py-4 shadow-lg">
       <div className="mx-auto flex items-center justify-between md:w-md lg:w-lg xl:w-xl 2xl:w-2xl">
         <Button variant="secondary" asChild>
           <Link href="/">
