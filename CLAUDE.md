@@ -8,7 +8,7 @@ This is a personal portfolio website for Lee Jin Wook built with Next.js 16, Rea
 
 ## AI Workflow Policy
 
-**IMPORTANT**: In this project, AI should NOT directly write or modify code. Instead:
+**IMPORTANT: In this project, AI should NOT directly write or modify code. Instead:**
 - Provide guidance, suggestions, and recommendations
 - Explain best practices and implementation approaches
 - Answer questions about code architecture and patterns
