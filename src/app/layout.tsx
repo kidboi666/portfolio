@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Jost } from "next/font/google";
+import { Lexend } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/app/_components/header";
 import { Theme } from "./_components/theme";
 
-const jost = Jost({
+const lexend = Lexend({
   subsets: ["latin"],
 });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${jost.className} antialiased`}>
+      <body className={`${lexend.className} antialiased`}>
         <Header />
         <Theme>{children}</Theme>
       </body>

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { H1 } from "@/components/typography/heading";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
@@ -18,7 +17,7 @@ export function Header() {
       <div className="mx-auto flex items-center justify-between md:w-md lg:w-lg xl:w-xl 2xl:w-2xl">
         <Button variant="secondary" asChild>
           <Link href="/">
-            <H1 className="font-bold text-xl uppercase">lee jin wook</H1>
+            <h1 className="font-bold text-xl uppercase">lee jin wook</h1>
           </Link>
         </Button>
         <ul className="flex uppercase">
