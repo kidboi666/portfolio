@@ -1,5 +1,5 @@
-import { MDXLayout } from "@/app/_components/mdx_layout";
-import Content from "./content.mdx";
+import { MDXLayout } from "@/components/mdx_layout";
+import Content from "./page.mdx";
 
 export default function Portfolio() {
   return (

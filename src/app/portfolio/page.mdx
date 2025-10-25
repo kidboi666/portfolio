@@ -1,0 +1,218 @@
+# 🌟 MoodLog
+<img width="256" height="256" alt="대지 수정본 2" src="https://github.com/user-attachments/assets/17782d8d-dbec-43f7-9744-bde595498ef9" />
+
+
+> **감정을 기록하고, 마음을 들여다보는 AI 감정 일기 앱**
+
+MoodLog는 일상의 감정을 기록하고 분석하여 더 나은 자신을 만들어가는 여정을 돕는 Flutter 기반 크로스플랫폼 앱입니다.
+
+[![Play Store](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.kidboi666.moodlog)
+[![App Store](https://img.shields.io/badge/App_Store-0D96F6?style=for-the-badge&logo=app-store&logoColor=white)](https://apps.apple.com/us/app/%EB%AC%B4%EB%93%9C%EB%A1%9C%EA%B7%B8/id6752590873?itscg=30200&itsct=apps_box_badge&mttnsubad=6752590873)
+[![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
+[![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)](https://firebase.google.com)
+[![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
+![Provider](https://img.shields.io/badge/Provider-%23006600?style=for-the-badge)
+![Freezed](https://img.shields.io/badge/Freezed-%235395FD?style=for-the-badge)
+![Drift](https://img.shields.io/badge/Drift-%23478061?style=for-the-badge)
+
+
+
+## 📱 스크린샷
+
+<table>
+  <tr>
+    <td><img width="295" height="639" alt="Simulator Screenshot 1" src="https://github.com/user-attachments/assets/dbcddcd5-5928-4572-8b91-3a2f98fd226d" /></td>
+    <td><img width="295" height="639" alt="Simulator Screenshot 2" src="https://github.com/user-attachments/assets/61aa82f0-0da1-419a-ad50-be48df805ac7" /></td>
+    <td><img width="295" height="639" alt="Simulator Screenshot 3" src="https://github.com/user-attachments/assets/18881eeb-ebc2-4a51-9876-80aaae5e1a79" /></td>
+  </tr>
+  <tr>
+    <td><img width="295" height="639" alt="Simulator Screenshot 4" src="https://github.com/user-attachments/assets/53e2e39b-b608-4270-933d-e1019f18afd8" /></td>
+    <td><img width="295" height="639" alt="Simulator Screenshot 5" src="https://github.com/user-attachments/assets/bc6fdecc-d644-465c-ba57-0e6e34e14ac6" /></td>
+    <td><img width="295" height="639" alt="Simulator Screenshot 6" src="https://github.com/user-attachments/assets/bbd60fc4-1259-4e95-b619-69e2a210d60c" /></td>
+  </tr>
+</table>
+
+## ✨ 주요 기능
+
+### 📝 **스마트 감정 기록**
+- 5단계 감정 선택으로 간편한 기록
+- 이미지, 위치, 날씨 정보 자동 연동
+- 태그 시스템으로 체계적인 분류
+
+### 🤖 **AI 위로 메시지**
+- Gemini AI가 제공하는 개인 맞춤형 위로와 격려
+- 일기 내용을 분석한 공감적 응답
+- 하루 1회 제한으로 특별함 유지
+
+### 📊 **인사이트풀한 통계**
+- GitHub 스타일 연간 활동 히트맵
+- 감정 분포 및 트렌드 분석
+- 연속 기록 달성 현황 추적
+- 대표 감정 및 평균 점수 계산
+
+### 🌍 **글로벌 접근성**
+- 3개 언어 지원: 한국어, 영어, 일본어
+- 다양한 폰트 옵션 (프리텐다드, 이서윤체, 나눔손글씨 등)
+- 라이트/다크 테마 자동 전환
+
+### 🔐 **100% 프라이빗 & 로컬 데이터**
+- **로그인 불필요**: 계정 생성 없이 바로 사용 시작
+- **로컬 우선 아키텍처**: 모든 데이터는 사용자의 기기에만 안전하게 저장
+- **인터넷 연결 없이 사용**: 오프라인 상태에서도 모든 기능 정상 작동
+
+## 🏗️ 기술 스택
+
+### **Frontend**
+- **Flutter** - 크로스플랫폼 UI 프레임워크
+- **Dart** - 프로그래밍 언어
+- **Provider** - 상태 관리
+- **Go Router** - 선언적 라우팅
+- **Drift (SQLite)** - 로컬 데이터베이스
+- **Freezed** - 객체 관련 유틸
+
+### **Services**
+- **Google Gemini AI** - AI 응답 생성
+- **Google Mobile Ads** - 광고 수익화
+- **Firebase Analytics** - 사용자 분석
+
+### **External APIs**
+- **Image Picker** - 갤러리 접근
+
+## 🏛️ 아키텍처
+
+MoodLog는 **Clean Architecture**와 **MVVM** 패턴을 적용하여 확장 가능하고 유지보수가 용이한 구조로 설계되었습니다.
+
+```
+lib/
+├── core/                    # 공통 모듈
+│   ├── constants/          # 앱 전역 상수
+│   ├── l10n/              # 다국어 지원
+│   ├── services/          # 앱 전역 서비스 (로깅, Flavor 등)
+│   ├── routing/           # 라우팅 설정
+│   └── utils/             # 상태 없는 헬퍼 함수
+├── data/                   # 데이터 계층
+│   ├── data_source/       # 로컬 데이터 소스 (Drift, SharedPreferences)
+│   └── repositories/      # Repository 구현체
+├── domain/                 # 도메인 계층
+│   ├── entities/          # 비즈니스 엔티티
+│   ├── repositories/      # Repository 인터페이스
+│   └── use_cases/         # 비즈니스 로직
+└── presentation/          # 프레젠테이션 계층
+    ├── screens/           # 각 화면(View)을 구성
+    │   ├── home/
+    │   ├── write/
+    │   └── ...
+    ├── providers/         # 상태 관리 (ViewModel)
+    ├── widgets/           # 공통 위젯
+    ├── theme/             # 앱 테마
+    └── mixins/            # 공통 Mixin
+```
+
+### **Design Patterns**
+- **MVVM (Model-View-ViewModel)** - UI와 비즈니스 로직 분리
+- **Repository Pattern** - 데이터 소스 추상화
+- **UseCase Pattern** - 비즈니스 로직 캡슐화
+- **Provider Pattern** - 반응형 상태 관리
+
+### **개선 예정 사항**
+- **클린 아키텍처 위배 사항 수정** - 도메인 레이어에서 플러터를 참조하는 코드들과, 데이터 레이어에서 플러터를 참조하는 코드들 수정 예정
+
+## 🚀 시작하기
+
+### **사전 요구사항**
+- Flutter SDK (3.0.0 이상)
+- Dart SDK (3.0.0 이상)
+- Android Studio / VS Code
+- Firebase 프로젝트 설정
+
+### **설치 및 실행**
+
+1. **저장소 클론**
+```bash
+git clone https://github.com/your-username/moodlog.git
+cd moodlog
+```
+
+2. **의존성 설치**
+```bash
+flutter pub get
+```
+
+3. **Firebase 설정**
+```bash
+# Firebase CLI 설치 후
+firebase login
+flutterfire configure
+```
+
+4. **코드 생성**
+```bash
+# 한 번만 빌드
+dart run build_runner build
+
+# 변경사항 감지하여 자동 빌드
+dart run build_runner watch
+
+# 기존 생성된 파일 삭제 후 재 빌드
+dart run build_runner build --delete-conflicting-outputs
+```
+
+5. **앱 실행**
+```bash
+flutter run
+```
+
+### **빌드**
+```bash
+# Android APK
+flutter build apk --release
+
+# iOS IPA
+flutter build ios --release
+
+# Web
+flutter build web
+```
+
+### 메인 화면
+| 홈 | 일기 작성 | 통계 |
+|:---:|:---:|:---:|
+| 감정 현황과 최근 기록 | AI 위로 메시지 포함 | 연간 활동 히트맵 |
+
+### 다국어 지원
+| 한국어 | English | 日本語 |
+|:---:|:---:|:---:|
+| 기본 언어 | 글로벌 사용자 | 일본 사용자 |
+
+## 🤝 기여하기
+
+MoodLog 프로젝트에 기여해주시는 모든 분들을 환영합니다!
+
+### **기여 방법**
+1. 이슈 생성 또는 기존 이슈 확인
+2. Fork 후 feature 브랜치 생성
+3. 코드 작성 및 테스트
+4. Pull Request 생성
+
+### **개발 가이드라인**
+- **코드 스타일**: `dart format` 및 `dart analyze` 준수
+- **커밋 메시지**: [Conventional Commits](https://conventionalcommits.org/) 형식
+- **테스트**: 새로운 기능은 테스트 코드 포함
+
+## 👥 팀
+
+- **개발자**: logmind
+- **이메일**: log.mind.365@gmail.com
+- **GitHub**: [@kidboi666](https://github.com/kidboi666/moodlog)
+
+## 🙏 감사의 말
+
+- [Flutter 팀](https://flutter.dev)의 훌륭한 프레임워크
+- [Firebase](https://firebase.google.com)의 강력한 백엔드 서비스
+- [Material Design](https://material.io)의 아름다운 디자인 시스템
+- 모든 오픈소스 기여자들
+
+---
+
+**MoodLog와 함께 당신의 감정 여행을 시작해보세요! 🌈**
+
