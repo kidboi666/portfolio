@@ -1,34 +1,73 @@
-# 🌟 MoodLog
-<img width="256" height="256" alt="대지 수정본 2" src="https://github.com/user-attachments/assets/17782d8d-dbec-43f7-9744-bde595498ef9" />
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
 
+
+<Carousel>
+  <CarouselContent>
+    <CarouselItem>
+      <div className="flex justify-center">
+        <img width="256" height="256" alt="대지 수정본 2"
+             src="https://github.com/user-attachments/assets/17782d8d-dbec-43f7-9744-bde595498ef9"/>
+        <div className="flex flex-col justify-center items-center gap-2 text-center">
+          # MoodLog
+        </div>
+      </div>
+    </CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious/>
+  <CarouselNext/>
+</Carousel>
 
 > **감정을 기록하고, 마음을 들여다보는 AI 감정 일기 앱**
 
 MoodLog는 일상의 감정을 기록하고 분석하여 더 나은 자신을 만들어가는 여정을 돕는 Flutter 기반 크로스플랫폼 앱입니다.
 
-[![Play Store](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.kidboi666.moodlog)
-[![App Store](https://img.shields.io/badge/App_Store-0D96F6?style=for-the-badge&logo=app-store&logoColor=white)](https://apps.apple.com/us/app/%EB%AC%B4%EB%93%9C%EB%A1%9C%EA%B7%B8/id6752590873?itscg=30200&itsct=apps_box_badge&mttnsubad=6752590873)
-[![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
-[![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)](https://firebase.google.com)
-[![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
-![Provider](https://img.shields.io/badge/Provider-%23006600?style=for-the-badge)
-![Freezed](https://img.shields.io/badge/Freezed-%235395FD?style=for-the-badge)
-![Drift](https://img.shields.io/badge/Drift-%23478061?style=for-the-badge)
-
+<div className="flex gap-2 flex-wrap">
+  <Link href="https://play.google.com/store/apps/details?id=com.kidboi666.moodlog" asChild>
+    <img
+        src="https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white"
+        alt="Google Play"/>
+  </Link>
+  <Link
+      href="https://apps.apple.com/us/app/%EB%AC%B4%EB%93%9C%EB%A1%9C%EA%B7%B8/id6752590873?itscg=30200&itsct=apps_box_badge&mttnsubad=6752590873">
+    <img
+        src="https://img.shields.io/badge/App_Store-0D96F6?style=for-the-badge&logo=app-store&logoColor=white"
+        alt="App Store"/>
+  </Link>
+</div>
 
 
 ## 📱 스크린샷
 
 <table>
   <tr>
-    <td><img width="295" height="639" alt="Simulator Screenshot 1" src="https://github.com/user-attachments/assets/dbcddcd5-5928-4572-8b91-3a2f98fd226d" /></td>
-    <td><img width="295" height="639" alt="Simulator Screenshot 2" src="https://github.com/user-attachments/assets/61aa82f0-0da1-419a-ad50-be48df805ac7" /></td>
-    <td><img width="295" height="639" alt="Simulator Screenshot 3" src="https://github.com/user-attachments/assets/18881eeb-ebc2-4a51-9876-80aaae5e1a79" /></td>
+    <td><img width="295" height="639" alt="Simulator Screenshot 1"
+             src="https://github.com/user-attachments/assets/dbcddcd5-5928-4572-8b91-3a2f98fd226d"/>
+    </td>
+    <td><img width="295" height="639" alt="Simulator Screenshot 2"
+             src="https://github.com/user-attachments/assets/61aa82f0-0da1-419a-ad50-be48df805ac7"/>
+    </td>
+    <td><img width="295" height="639" alt="Simulator Screenshot 3"
+             src="https://github.com/user-attachments/assets/18881eeb-ebc2-4a51-9876-80aaae5e1a79"/>
+    </td>
   </tr>
   <tr>
-    <td><img width="295" height="639" alt="Simulator Screenshot 4" src="https://github.com/user-attachments/assets/53e2e39b-b608-4270-933d-e1019f18afd8" /></td>
-    <td><img width="295" height="639" alt="Simulator Screenshot 5" src="https://github.com/user-attachments/assets/bc6fdecc-d644-465c-ba57-0e6e34e14ac6" /></td>
-    <td><img width="295" height="639" alt="Simulator Screenshot 6" src="https://github.com/user-attachments/assets/bbd60fc4-1259-4e95-b619-69e2a210d60c" /></td>
+    <td><img width="295" height="639" alt="Simulator Screenshot 4"
+             src="https://github.com/user-attachments/assets/53e2e39b-b608-4270-933d-e1019f18afd8"/>
+    </td>
+    <td><img width="295" height="639" alt="Simulator Screenshot 5"
+             src="https://github.com/user-attachments/assets/bc6fdecc-d644-465c-ba57-0e6e34e14ac6"/>
+    </td>
+    <td><img width="295" height="639" alt="Simulator Screenshot 6"
+             src="https://github.com/user-attachments/assets/bbd60fc4-1259-4e95-b619-69e2a210d60c"/>
+    </td>
   </tr>
 </table>
 
