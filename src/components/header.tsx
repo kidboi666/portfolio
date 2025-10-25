@@ -5,9 +5,11 @@ import {
   CircleQuestionMarkIcon,
   FileUserIcon,
   HomeIcon,
+  MoonIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import {
   Tooltip,
@@ -23,6 +25,8 @@ const navItems = [
 
 export function Header() {
   const pathname = usePathname();
+  const { theme, setTheme } = useTheme();
+
   return (
     <header className="sticky top-2 z-50 mx-2 items-center justify-center rounded-md border bg-background px-2 py-2 shadow-sm backdrop-blur-sm">
       <div className="flex items-center justify-between">
@@ -39,6 +43,22 @@ export function Header() {
           </TooltipContent>
         </Tooltip>
         <ul className="flex gap-2">
+          <li>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                >
+                  <MoonIcon />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Toggle Theme</p>
+              </TooltipContent>
+            </Tooltip>
+          </li>
           {navItems.map(({ title, href, icon }) => {
             const isActive = pathname === href;
             return (

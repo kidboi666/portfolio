@@ -1,22 +1,44 @@
-import type { MDXComponents } from "mdx/types";
-import Image, { type ImageProps } from "next/image";
+import Image from "next/image";
 import { MDXLayout } from "@/components/mdx_layout";
-import Content from "./page.mdx";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
-const overrideComponents: MDXComponents = {
-  img: (props) => (
-    <Image
-      sizes="100vw"
-      style={{ margin: 0, marginBottom: 0, marginTop: 0 }}
-      {...(props as ImageProps)}
-    />
-  ),
-};
-
-export default function Portfolio() {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <MDXLayout>
-      <Content components={overrideComponents} />
+      <Carousel>
+        <CarouselContent>
+          <CarouselItem>
+            <div className="flex items-center justify-center">
+              <Image
+                width="256"
+                height="256"
+                alt="moodlog"
+                src="/images/portfolio/moodlog_cover.png"
+              />
+              <h1>MoodLog</h1>
+            </div>
+          </CarouselItem>
+          <CarouselItem>
+            <div className="flex items-center justify-center">
+              <Image
+                width="256"
+                height="256"
+                alt="moodlog"
+                src="/images/portfolio/moodlog_cover.png"
+              />
+            </div>
+          </CarouselItem>
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+      {children}
     </MDXLayout>
   );
 }
