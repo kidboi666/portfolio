@@ -3,13 +3,9 @@ export default async function Page({
 }: {
   params: Promise<{ slug: string[] }>;
 }) {
-  const project = await params.then((params) => params.slug?.[0]);
-  try {
-    const { default: Project } = await import(`@/app/portfolio/${project}.mdx`);
-    return <Project />;
-  } catch (e) {
-    console.log(e);
-  }
+  const project = await params.then((params) => params.slug?.[0] || "moodlog");
+  const { default: Project } = await import(`@/app/portfolio/${project}.mdx`);
+  return <Project />;
 }
 
 export function generateStaticParams() {

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import { Header } from "@/components/header";
+import { Header } from "@/app/_components/header";
+import { cn } from "@/lib/utils";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -20,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${lexend.className} antialiased`}>
+      <body className={cn("antialiased", lexend.className)}>
         <ThemeProvider attribute="class">
           <Header />
           {children}

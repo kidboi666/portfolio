@@ -4,6 +4,7 @@ import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -28,6 +29,20 @@ type CarouselContextProps = {
   canScrollPrev: boolean;
   canScrollNext: boolean;
 } & CarouselProps;
+
+type CarouselItemProps = {
+  title: string;
+  description: string;
+  src: string;
+  width?: number;
+  height?: number;
+  slug: string;
+};
+
+type CarouselDotProps = {
+  current: number;
+  length: number;
+};
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
 
@@ -232,11 +247,62 @@ function CarouselNext({
   );
 }
 
+function CarouselItemContent({
+  title,
+  description,
+  width = 256,
+  height = 256,
+  src,
+}: React.ComponentProps<"div"> & CarouselItemProps) {
+  return (
+    <div className="flex h-64 items-center justify-center no-underline">
+      <Image
+        width={width}
+        height={height}
+        alt={src}
+        src={src}
+        style={{ objectFit: "cover", padding: 16 }}
+      />
+      <div className="select-none">
+        <h1 className="font-bold text-3xl text-heading-secondary">{title}</h1>
+        <p className="text-muted-foreground">{description}</p>
+      </div>
+    </div>
+  );
+}
+
+function CarouselDot({
+  current,
+  length,
+  className,
+  ...props
+}: React.ComponentProps<"div"> & CarouselDotProps) {
+  return (
+    <div
+      className={cn("flex items-center justify-center gap-1", className)}
+      {...props}
+    >
+      {Array.from({ length }).map((_, index) => (
+        <div
+          // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+          key={index}
+          className={cn(
+            "h-2 w-2 rounded-full",
+            current === index ? "bg-muted-foreground" : "bg-muted",
+          )}
+        />
+      ))}
+    </div>
+  );
+}
+
 export {
   type CarouselApi,
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselItemContent,
   CarouselPrevious,
   CarouselNext,
+  CarouselDot,
 };

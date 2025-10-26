@@ -1,13 +1,12 @@
-import { CarouselSection } from "@/app/portfolio/_components/carousel_section";
 import { MDXLayout } from "@/components/shared/mdx_layout";
 import { ProseWrapper } from "@/components/shared/prose_wrapper";
+import Content from "./page.mdx";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default function AboutMe() {
   return (
     <MDXLayout>
       <ProseWrapper>
-        <CarouselSection />
-        {children}
+        <Content />
       </ProseWrapper>
     </MDXLayout>
   );
