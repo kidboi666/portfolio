@@ -203,7 +203,7 @@ function CarouselPrevious({
       className={cn(
         "absolute size-8 rounded-full",
         orientation === "horizontal"
-          ? "lg:-left-12 md:-translate-y-1/2 bottom-2 left-2 md:top-1/2"
+          ? "lg:-left-12 -translate-y-1/2 top-1/2 left-2"
           : "-top-12 -translate-x-1/2 left-1/2 rotate-90",
         className,
       )}
@@ -233,7 +233,7 @@ function CarouselNext({
       className={cn(
         "absolute size-8 rounded-full",
         orientation === "horizontal"
-          ? "lg:-right-12 md:-translate-y-1/2 right-2 bottom-2 md:top-1/2"
+          ? "lg:-right-12 -translate-y-1/2 top-1/2 right-2"
           : "-bottom-12 -translate-x-1/2 left-1/2 rotate-90",
         className,
       )}
@@ -250,8 +250,8 @@ function CarouselNext({
 function CarouselItemContent({
   title,
   description,
-  width = 256,
-  height = 256,
+  width = 152,
+  height = 152,
   src,
 }: React.ComponentProps<"div"> & CarouselItemProps) {
   return (

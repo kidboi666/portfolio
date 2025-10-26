@@ -1,234 +1,195 @@
-import Link from "next/link";
-
-> **감정을 기록하고, 마음을 들여다보는 AI 감정 일기 앱**
-
-MoodLog는 일상의 감정을 기록하고 분석하여 더 나은 자신을 만들어가는 여정을 돕는 Flutter 기반 크로스플랫폼 앱입니다.
-
-<div className="flex gap-2 flex-wrap">
-  <Link href="https://play.google.com/store/apps/details?id=com.kidboi666.moodlog">
-    <img
-        src="https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white"
-        alt="Google Play"/>
-  </Link>
-  <Link
-      href="https://apps.apple.com/us/app/%EB%AC%B4%EB%93%9C%EB%A1%9C%EA%B7%B8/id6752590873?itscg=30200&itsct=apps_box_badge&mttnsubad=6752590873">
-    <img
-        src="https://img.shields.io/badge/App_Store-0D96F6?style=for-the-badge&logo=app-store&logoColor=white"
-        alt="App Store"/>
-  </Link>
-</div>
-
-
-## 📱 스크린샷
-
-<table>
-  <tbody>
-    <tr>
-      <td><img width="295" height="639" alt="Simulator Screenshot 1"
-               src="https://github.com/user-attachments/assets/dbcddcd5-5928-4572-8b91-3a2f98fd226d"/>
-      </td>
-      <td><img width="295" height="639" alt="Simulator Screenshot 2"
-               src="https://github.com/user-attachments/assets/61aa82f0-0da1-419a-ad50-be48df805ac7"/>
-      </td>
-      <td><img width="295" height="639" alt="Simulator Screenshot 3"
-               src="https://github.com/user-attachments/assets/18881eeb-ebc2-4a51-9876-80aaae5e1a79"/>
-      </td>
-    </tr>
-    <tr>
-      <td><img width="295" height="639" alt="Simulator Screenshot 4"
-               src="https://github.com/user-attachments/assets/53e2e39b-b608-4270-933d-e1019f18afd8"/>
-      </td>
-      <td><img width="295" height="639" alt="Simulator Screenshot 5"
-               src="https://github.com/user-attachments/assets/bc6fdecc-d644-465c-ba57-0e6e34e14ac6"/>
-      </td>
-      <td><img width="295" height="639" alt="Simulator Screenshot 6"
-               src="https://github.com/user-attachments/assets/bbd60fc4-1259-4e95-b619-69e2a210d60c"/>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-## ✨ 주요 기능
-
-### 📝 **스마트 감정 기록**
-- 5단계 감정 선택으로 간편한 기록
-- 이미지, 위치, 날씨 정보 자동 연동
-- 태그 시스템으로 체계적인 분류
-
-### 🤖 **AI 위로 메시지**
-- Gemini AI가 제공하는 개인 맞춤형 위로와 격려
-- 일기 내용을 분석한 공감적 응답
-- 하루 1회 제한으로 특별함 유지
-
-### 📊 **인사이트풀한 통계**
-- GitHub 스타일 연간 활동 히트맵
-- 감정 분포 및 트렌드 분석
-- 연속 기록 달성 현황 추적
-- 대표 감정 및 평균 점수 계산
-
-### 🌍 **글로벌 접근성**
-- 3개 언어 지원: 한국어, 영어, 일본어
-- 다양한 폰트 옵션 (프리텐다드, 이서윤체, 나눔손글씨 등)
-- 라이트/다크 테마 자동 전환
-
-### 🔐 **100% 프라이빗 & 로컬 데이터**
-- **로그인 불필요**: 계정 생성 없이 바로 사용 시작
-- **로컬 우선 아키텍처**: 모든 데이터는 사용자의 기기에만 안전하게 저장
-- **인터넷 연결 없이 사용**: 오프라인 상태에서도 모든 기능 정상 작동
-
-## 🏗️ 기술 스택
-
-### **Frontend**
-- **Flutter** - 크로스플랫폼 UI 프레임워크
-- **Dart** - 프로그래밍 언어
-- **Provider** - 상태 관리
-- **Go Router** - 선언적 라우팅
-- **Drift (SQLite)** - 로컬 데이터베이스
-- **Freezed** - 객체 관련 유틸
-
-### **Services**
-- **Google Gemini AI** - AI 응답 생성
-- **Google Mobile Ads** - 광고 수익화
-- **Firebase Analytics** - 사용자 분석
-
-### **External APIs**
-- **Image Picker** - 갤러리 접근
-
-## 🏛️ 아키텍처
-
-MoodLog는 **Clean Architecture**와 **MVVM** 패턴을 적용하여 확장 가능하고 유지보수가 용이한 구조로 설계되었습니다.
-
-```
-lib/
-├── core/                    # 공통 모듈
-│   ├── constants/          # 앱 전역 상수
-│   ├── l10n/              # 다국어 지원
-│   ├── services/          # 앱 전역 서비스 (로깅, Flavor 등)
-│   ├── routing/           # 라우팅 설정
-│   └── utils/             # 상태 없는 헬퍼 함수
-├── data/                   # 데이터 계층
-│   ├── data_source/       # 로컬 데이터 소스 (Drift, SharedPreferences)
-│   └── repositories/      # Repository 구현체
-├── domain/                 # 도메인 계층
-│   ├── entities/          # 비즈니스 엔티티
-│   ├── repositories/      # Repository 인터페이스
-│   └── use_cases/         # 비즈니스 로직
-└── presentation/          # 프레젠테이션 계층
-    ├── screens/           # 각 화면(View)을 구성
-    │   ├── home/
-    │   ├── write/
-    │   └── ...
-    ├── providers/         # 상태 관리 (ViewModel)
-    ├── widgets/           # 공통 위젯
-    ├── theme/             # 앱 테마
-    └── mixins/            # 공통 Mixin
-```
-
-### **Design Patterns**
-- **MVVM (Model-View-ViewModel)** - UI와 비즈니스 로직 분리
-- **Repository Pattern** - 데이터 소스 추상화
-- **UseCase Pattern** - 비즈니스 로직 캡슐화
-- **Provider Pattern** - 반응형 상태 관리
-
-### **개선 예정 사항**
-- **클린 아키텍처 위배 사항 수정** - 도메인 레이어에서 플러터를 참조하는 코드들과, 데이터 레이어에서 플러터를 참조하는 코드들 수정 예정
-
-## 🚀 시작하기
-
-### **사전 요구사항**
-- Flutter SDK (3.0.0 이상)
-- Dart SDK (3.0.0 이상)
-- Android Studio / VS Code
-- Firebase 프로젝트 설정
-
-### **설치 및 실행**
-
-1. **저장소 클론**
-```bash
-git clone https://github.com/your-username/moodlog.git
-cd moodlog
-```
-
-2. **의존성 설치**
-```bash
-flutter pub get
-```
-
-3. **Firebase 설정**
-```bash
-# Firebase CLI 설치 후
-firebase login
-flutterfire configure
-```
-
-4. **코드 생성**
-```bash
-# 한 번만 빌드
-dart run build_runner build
-
-# 변경사항 감지하여 자동 빌드
-dart run build_runner watch
-
-# 기존 생성된 파일 삭제 후 재 빌드
-dart run build_runner build --delete-conflicting-outputs
-```
-
-5. **앱 실행**
-```bash
-flutter run
-```
-
-### **빌드**
-```bash
-# Android APK
-flutter build apk --release
-
-# iOS IPA
-flutter build ios --release
-
-# Web
-flutter build web
-```
-
-### 메인 화면
-| 홈 | 일기 작성 | 통계 |
-|:---:|:---:|:---:|
-| 감정 현황과 최근 기록 | AI 위로 메시지 포함 | 연간 활동 히트맵 |
-
-### 다국어 지원
-| 한국어 | English | 日本語 |
-|:---:|:---:|:---:|
-| 기본 언어 | 글로벌 사용자 | 일본 사용자 |
-
-## 🤝 기여하기
-
-MoodLog 프로젝트에 기여해주시는 모든 분들을 환영합니다!
-
-### **기여 방법**
-1. 이슈 생성 또는 기존 이슈 확인
-2. Fork 후 feature 브랜치 생성
-3. 코드 작성 및 테스트
-4. Pull Request 생성
-
-### **개발 가이드라인**
-- **코드 스타일**: `dart format` 및 `dart analyze` 준수
-- **커밋 메시지**: [Conventional Commits](https://conventionalcommits.org/) 형식
-- **테스트**: 새로운 기능은 테스트 코드 포함
-
-## 👥 팀
-
-- **개발자**: logmind
-- **이메일**: log.mind.365@gmail.com
-- **GitHub**: [@kidboi666](https://github.com/kidboi666/moodlog)
-
-## 🙏 감사의 말
-
-- [Flutter 팀](https://flutter.dev)의 훌륭한 프레임워크
-- [Firebase](https://firebase.google.com)의 강력한 백엔드 서비스
-- [Material Design](https://material.io)의 아름다운 디자인 시스템
-- 모든 오픈소스 기여자들
 
 ---
 
-**MoodLog와 함께 당신의 감정 여행을 시작해보세요! 🌈**
+# 🌈 MoodLog - AI 기반 감정 일기 앱
 
+## 📋 프로젝트 개요
+
+**MoodLog**는 사용자의 일상적인 감정을 기록하고 AI가 맞춤형 위로 메시지를 제공하는 크로스플랫폼 모바일 앱입니다. 로그인 없이 완전한 프라이버시를 보장하며, 로컬 우선 아키텍처로 설계되어 모든 데이터가 사용자 기기에 안전하게 저장됩니다.
+
+**배포 현황**
+- iOS App Store 및 Google Play Store 정식 출시
+- 3개 언어 지원 (한국어, 영어, 일본어)
+- 프로덕션 환경에서 안정적으로 운영 중
+
+**개발 기간**: 2024년 ~ 현재 (지속적 개선 중)
+**역할**: 1인 개발 (기획, 디자인, 개발, 배포, 운영)
+
+---
+
+## 🛠 기술 스택
+
+### Frontend
+- **Flutter** 3.0+ - 크로스플랫폼 UI 프레임워크
+- **Dart** 3.0+ - 프로그래밍 언어
+- **Provider** - 상태 관리 (MVVM 패턴)
+- **Go Router** - 선언적 라우팅
+- **Freezed** - 불변 데이터 클래스 자동 생성
+
+### Backend & Services
+- **Drift (SQLite)** - 로컬 데이터베이스
+- **Firebase**
+- Gemini AI: AI 위로 메시지 생성
+- Analytics: 사용자 행동 분석
+- **Google Mobile Ads** - AdMob 광고 수익화
+
+### Architecture & Patterns
+- **Clean Architecture** - 계층 분리 및 의존성 관리
+- **MVVM (Model-View-ViewModel)** - UI와 비즈니스 로직 분리
+- **Repository Pattern** - 데이터 소스 추상화
+- **UseCase Pattern** - 비즈니스 로직 캡슐화
+
+---
+
+## ✨ 주요 기능
+
+### 1. 감정 기록 시스템
+- 5단계 감정 선택 (매우 좋음 ~ 매우 나쁨)
+- 텍스트, 이미지, 태그를 활용한 다양한 표현
+- 직관적인 UI/UX로 일기 작성 경험 최적화
+
+### 2. AI 위로 메시지
+- **Gemini AI** 통합으로 일기 내용을 분석한 개인 맞춤형 응답
+- 하루 1회 제한으로 특별함 유지
+- 사용자 감정에 공감하는 지능적 메시지 생성
+
+### 3. 통계 및 인사이트
+- GitHub 스타일 연간 활동 히트맵
+- 주간/월간/연간 감정 분포 차트
+- 연속 기록 달성 현황 추적
+- CustomPainter를 활용한 커스텀 차트 구현
+
+### 4. 글로벌 지원
+- 3개 언어 다국어 지원 (i18n)
+- 다양한 폰트 옵션 (Pretendard, 이서윤체, 달의궤도체 등)
+- 라이트/다크 테마 자동 전환
+
+### 5. 100% 프라이빗
+- 로그인 불필요 (계정 생성 없음)
+- 로컬 우선 데이터 저장
+- 오프라인 완전 지원
+
+---
+
+## 🏗 아키텍처 및 설계
+
+### Clean Architecture 구조
+```
+lib/
+├── core/              # 공통 모듈 (상수, 서비스, 유틸)
+├── data/              # 데이터 계층 (Repository 구현, DataSource)
+├── domain/            # 도메인 계층 (Entity, UseCase, Repository 인터페이스)
+└── presentation/      # 프레젠테이션 계층
+    ├── screens/       # View (UI)
+    ├── providers/     # ViewModel (상태 관리)
+    └── widgets/       # 공통 위젯
+```
+
+### 주요 설계 패턴
+
+**MVVM + Provider**
+- View와 비즈니스 로직 완전 분리
+- `ChangeNotifier` 기반 반응형 상태 관리
+- `context.select`를 활용한 최적화된 리빌드 제어
+
+**Repository Pattern**
+- 데이터 소스 추상화로 테스트 용이성 확보
+- 로컬 DB와 외부 API 간 일관된 인터페이스 제공
+
+**의존성 주입 (DI)**
+- Provider 기반 DI 컨테이너 구현
+- 느슨한 결합으로 유지보수성 향상
+
+---
+
+## 💪 개발 과정 및 도전 과제
+
+### 1. 대규모 리팩토링 수행
+**문제**: WriteViewModel이 694줄, 11개의 의존성을 가진 God Object로 성장
+- 단일 책임 원칙(SRP) 위반
+- 테스트 작성 어려움
+- 코드 가독성 저하
+
+**해결**:
+- Facade 패턴으로 관련 UseCase 그룹화 (AI 기능 통합)
+- Coordinator 패턴으로 위치/날씨 로직 조율
+- Mixin을 활용한 기능별 코드 분할
+- 의존성을 11개 → 6개로 45% 감소 목표
+
+### 2. 상태 관리 일관성 확보
+**문제**: StatefulWidget의 setState와 ViewModel 패턴 혼재 사용
+- 14개 파일에서 일관성 없는 상태 관리
+- 예측 불가능한 UI 업데이트 흐름
+
+**해결**:
+- `AsyncStateMixin` 구현으로 비동기 상태 표준화
+- 모든 UI 상태를 ViewModel로 통합
+- Loading/Success/Error 상태를 일관되게 처리
+
+### 3. Clean Architecture 원칙 준수
+**문제**: 도메인/데이터 계층에서 Flutter UI 의존성 참조
+- 프레임워크 독립성 위배
+- 레이어 간 경계 모호
+
+**해결** (진행 중):
+- 도메인 계층의 Flutter 참조 제거
+- Entity와 Model 명확히 분리
+- 의존성 방향 규칙 엄격히 적용
+
+### 4. 크로스플랫폼 배포 경험
+- iOS App Store 및 Google Play 배포 프로세스 완료
+- Flavor 기반 환경 분리 (development/staging/production)
+- Firebase 프로젝트별 구성 자동화
+- 사업자 등록 및 법적 요구사항 처리
+
+---
+
+## 📊 성과 및 학습
+
+### 기술적 성과
+- **테스트 가능한 코드**: Repository 패턴으로 Mock 객체 주입 용이
+- **성능 최적화**: `const` 생성자 활용, SliverList로 효율적 스크롤 구현
+- **코드 품질**: `flutter analyze` 경고 0개 달성 목표
+- **다국어화**: 40개 이상의 다국어 키 관리
+
+### 비즈니스 성과
+- iOS/Android 양 플랫폼 정식 출시
+- AdMob 통합으로 수익화 구조 마련
+- Firebase Analytics 기반 데이터 드리븐 개선
+
+### 개인 성장
+- **아키텍처 이해**: Clean Architecture를 실전 프로젝트에 적용하며 계층 분리의 중요성 체득
+- **리팩토리 스킬**: 레거시 코드를 점진적으로 개선하는 전략 수립 및 실행
+- **완성도**: 기획부터 배포, 운영까지 전체 라이프사이클 경험
+- **문제 해결**: 694줄의 God Object를 체계적으로 분해하는 과정에서 설계 원칙 내재화
+
+---
+
+## 🔮 향후 계획
+
+### 단기 목표 (1-2개월)
+- [ ] WriteViewModel 리팩토링 완료 (의존성 45% 감소)
+- [ ] 통합 테스트 및 단위 테스트 커버리지 80% 이상
+- [ ] 통계 화면 재설계 (CustomPainter 차트 14개 구현 완료)
+
+### 중기 목표 (3-6개월)
+- [ ] CI/CD 파이프라인 구축 (GitHub Actions)
+- [ ] 위젯 테스트 자동화
+- [ ] 사용자 피드백 기반 UX 개선
+
+### 장기 목표
+- [ ] 백업/복구 기능 추가
+- [ ] 더 다양한 통계 시각화
+- [ ] 접근성(Accessibility) 개선
+
+---
+
+## 🔗 링크
+
+- **GitHub**: [github.com/kidboi666/moodlog](https://github.com/kidboi666/moodlog)
+- **App Store**: [MoodLog on iOS](#)
+- **Play Store**: [MoodLog on Android](#)
+
+---
+
+*이 프로젝트는 웹 프론트엔드(React/Next.js)에서 모바일 개발(Flutter)로 전환하며 진행한 첫 프로덕션 앱으로, Clean Architecture와 MVVM 패턴을 실전에 적용하며 소프트웨어 설계 원칙의 중요성을 깊이 이해하게 된 의미 있는 경험입니다.*
