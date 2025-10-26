@@ -42,7 +42,7 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-2 z-50 mx-2 items-center justify-center rounded-md border border-sidebar-border bg-sidebar-accent/75 px-2 py-2 shadow-xs backdrop-blur-lg">
+    <header className="sticky top-2 z-50 mx-2 items-center justify-center rounded-md border border-sidebar-border bg-sidebar/75 px-2 py-2 shadow-xs backdrop-blur-lg">
       <div className="flex items-center justify-between">
         <Tooltip>
           <TooltipTrigger asChild>
@@ -116,8 +116,6 @@ function DarkModeToggleButton() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>테마</DropdownMenuLabel>
-        <DropdownMenuSeparator />
         <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
           <DropdownMenuRadioItem value="dark">
             <MoonIcon />

@@ -264,8 +264,8 @@ function CarouselItemContent({
         style={{ objectFit: "cover", padding: 16 }}
       />
       <div className="select-none">
-        <h1 className="font-bold text-3xl text-heading-secondary">{title}</h1>
-        <p className="text-muted-foreground">{description}</p>
+        <h1 className="font-bold text-3xl">{title}</h1>
+        {description}
       </div>
     </div>
   );

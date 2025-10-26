@@ -81,7 +81,7 @@ import {CodeBlock} from "../../components/shared/code_block";
 
 모가조아는 **관심사 분리(Separation of Concerns)** 원칙을 따르는 체계적인 폴더 구조를 가지고 있습니다.
 
-```
+```text
 src/
 ├── components/          # UI 컴포넌트
 │   ├── feature/        # 비즈니스 도메인별 컴포넌트
@@ -195,9 +195,9 @@ useEffect(() => {
 ```
 
 ### 3. **OAuth 인증 플로우**
-```typescript
-// Google/Kakao 인가 코드 수신 → idToken 교환 → 백엔드 로그인/회원가입 요청
-// → Access Token 쿠키 저장 → 메인 페이지 리다이렉트
+```text
+Google/Kakao 인가 코드 수신 → idToken 교환 → 백엔드 로그인/회원가입 요청
+→ Access Token 쿠키 저장 → 메인 페이지 리다이렉트
 ```
 
 ### 4. **Axios Interceptor를 통한 인증 토큰 관리**

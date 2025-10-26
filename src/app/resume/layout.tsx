@@ -5,7 +5,7 @@ import Content from "./page.mdx";
 export default function Resume() {
   return (
     <MDXLayout>
-      <ProseWrapper>
+      <ProseWrapper className="prose-headings:mt-0 prose-li:mt-0 prose-p:mt-0">
         <Content />
       </ProseWrapper>
     </MDXLayout>

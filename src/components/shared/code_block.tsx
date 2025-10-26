@@ -8,11 +8,7 @@ interface CodeBlockProps {
 
 export function CodeBlock({ language = "javascript", code }: CodeBlockProps) {
   return (
-    <SyntaxHighlighter
-      language={language}
-      style={atomOneDark}
-      showInlineLineNumbers
-    >
+    <SyntaxHighlighter language={language} style={atomOneDark} showLineNumbers>
       {code}
     </SyntaxHighlighter>
   );
