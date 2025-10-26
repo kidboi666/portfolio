@@ -20,7 +20,7 @@ export default function Home() {
         <div className="flex justify-center gap-4">
           <motion.button
             initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            animate={{ opacity: 1, scale: 1, transition: { delay: 0.5 } }}
           >
             <Button variant="outline" asChild>
               <Link href="/portfolio" className="no-underline">
@@ -34,7 +34,7 @@ export default function Home() {
             animate={{
               opacity: 1,
               scale: 1,
-              transition: { duration: 0.3 },
+              transition: { duration: 0.3, delay: 1 },
             }}
           >
             <Button variant="outline" asChild>
