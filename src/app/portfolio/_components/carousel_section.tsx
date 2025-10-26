@@ -38,7 +38,7 @@ export function CarouselSection() {
 
     setIndex(api.selectedScrollSnap());
 
-    api.on("settle", () => {
+    api.on("select", () => {
       const currentIndex = api.selectedScrollSnap();
       setIndex(currentIndex);
       const slug = projects[currentIndex].slug;
