@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
-    <motion.main
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       className="flex h-[calc(100vh-5rem)] w-full flex-col items-center justify-center"
@@ -46,6 +46,6 @@ export default function Home() {
           </motion.div>
         </div>
       </ProseWrapper>
-    </motion.main>
+    </motion.div>
   );
 }

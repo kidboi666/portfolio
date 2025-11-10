@@ -1,4 +1,7 @@
+import { FaFlutter } from "react-icons/fa6";
+import { GiCobweb } from "react-icons/gi";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { cn } from "@/lib/utils";
 
 type PlatformToggleProps = {
   value: string;
@@ -16,10 +19,26 @@ export function PlatformToggle({ value, onValueChange }: PlatformToggleProps) {
       size="lg"
     >
       <ToggleGroupItem value="web" aria-label="toggle web projects">
-        <span>Web</span>
+        <GiCobweb className="text-orange-500 dark:text-orange-400" />
+        <span
+          className={cn(
+            "transition-colors",
+            value === "web" && "text-orange-500 dark:text-orange-400",
+          )}
+        >
+          Web
+        </span>
       </ToggleGroupItem>
       <ToggleGroupItem value="flutter" aria-label="toggle flutter projects">
-        <span>Flutter</span>
+        <FaFlutter className="text-blue-400" />
+        <span
+          className={cn(
+            "transition-colors",
+            value === "flutter" && "text-blue-400",
+          )}
+        >
+          Flutter
+        </span>
       </ToggleGroupItem>
     </ToggleGroup>
   );

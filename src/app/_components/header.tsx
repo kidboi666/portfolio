@@ -19,10 +19,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
@@ -38,29 +36,32 @@ const navItems = [
   { title: "Resume", href: "/resume", icon: <FileUserIcon /> },
 ];
 
-export function Header() {
+export function Header({ className }: React.ComponentProps<"header">) {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-2 z-50 mx-2 items-center justify-center rounded-md border border-sidebar-border bg-sidebar/75 px-2 py-2 shadow-xs backdrop-blur-lg">
-      <div className="flex items-center justify-between">
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button variant="outline" size="icon" asChild>
-              <Link href="/">
-                <HomeIcon />
-              </Link>
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Home</p>
-          </TooltipContent>
-        </Tooltip>
-        <div className="flex gap-2">
-          <DarkModeToggleButton />
-          <CollapsibleContent className="md:hidden" />
-          <NavSection pathname={pathname} className="hidden md:flex" />
-        </div>
+    <header
+      className={cn(
+        "flex items-center justify-between rounded-md border border-sidebar-border bg-sidebar/75 px-2 py-2 shadow-xs backdrop-blur-lg",
+        className,
+      )}
+    >
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Button variant="outline" size="icon" asChild>
+            <Link href="/">
+              <HomeIcon />
+            </Link>
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>Home</p>
+        </TooltipContent>
+      </Tooltip>
+      <div className="flex gap-2">
+        <DarkModeToggleButton />
+        <CollapsibleContent className="md:hidden" />
+        <NavSection pathname={pathname} className="hidden md:flex" />
       </div>
     </header>
   );

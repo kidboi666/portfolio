@@ -23,8 +23,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn("antialiased", lexend.className)}>
         <ThemeProvider attribute="class">
-          <Header />
-          {children}
+          <main className="mx-auto max-w-full items-center justify-center lg:w-3xl">
+            <Header className="sticky top-2 z-50 m-2" />
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>
