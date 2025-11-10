@@ -31,9 +31,19 @@ import {
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { title: "About Me", href: "/about_me", icon: <CircleQuestionMarkIcon /> },
-  { title: "Portfolio", href: "/portfolio", icon: <BriefcaseBusinessIcon /> },
-  { title: "Resume", href: "/resume", icon: <FileUserIcon /> },
+  {
+    title: "About Me",
+    href: "/about_me",
+    icon: CircleQuestionMarkIcon,
+    tooltip: "자기소개서",
+  },
+  {
+    title: "Portfolio",
+    href: "/portfolio",
+    icon: BriefcaseBusinessIcon,
+    tooltip: "포트폴리오",
+  },
+  { title: "Resume", href: "/resume", icon: FileUserIcon, tooltip: "이력서" },
 ];
 
 export function Header({ className }: React.ComponentProps<"header">) {
@@ -78,12 +88,15 @@ function CollapsibleContent({ className }: { className?: string }) {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          {navItems.map(({ title, href, icon }) => (
-            <DropdownMenuItem key={title} onClick={() => router.push(href)}>
-              {icon}
-              {title}
-            </DropdownMenuItem>
-          ))}
+          {navItems.map(({ title, href, icon }) => {
+            const Icon = icon;
+            return (
+              <DropdownMenuItem key={title} onClick={() => router.push(href)}>
+                <Icon />
+                {title}
+              </DropdownMenuItem>
+            );
+          })}
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
@@ -110,29 +123,36 @@ function DarkModeToggleButton() {
   }
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon">
-          {mounted ? getThemeIcon(theme) : <ComputerIcon />}
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
-          <DropdownMenuRadioItem value="dark">
-            <MoonIcon />
-            Dark
-          </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="light">
-            <SunIcon />
-            Light
-          </DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="system">
-            <ComputerIcon />
-            System
-          </DropdownMenuRadioItem>
-        </DropdownMenuRadioGroup>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Tooltip>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <TooltipTrigger>
+            <Button variant="outline" size="icon">
+              {mounted ? getThemeIcon(theme) : <ComputerIcon />}
+            </Button>
+          </TooltipTrigger>
+        </DropdownMenuTrigger>
+        <TooltipContent>
+          <p>테마 변경</p>
+        </TooltipContent>
+        <DropdownMenuContent align="end">
+          <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
+            <DropdownMenuRadioItem value="dark">
+              <MoonIcon />
+              Dark
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="light">
+              <SunIcon />
+              Light
+            </DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="system">
+              <ComputerIcon />
+              System
+            </DropdownMenuRadioItem>
+          </DropdownMenuRadioGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </Tooltip>
   );
 }
 
@@ -145,21 +165,21 @@ function NavSection({
 }) {
   return (
     <div className={cn("gap-2", className)}>
-      {navItems.map(({ title, href, icon }) => {
-        const isActive = pathname === href;
+      {navItems.map(({ title, href, icon, tooltip }) => {
+        const isActive = pathname === href || pathname.includes(href);
+        const Icon = icon;
         return (
           <Tooltip key={title}>
             <TooltipTrigger asChild>
-              <Button
-                variant={isActive ? "default" : "outline"}
-                size="icon"
-                asChild
-              >
-                <Link href={href}>{icon}</Link>
+              <Button variant={isActive ? "default" : "outline"} asChild>
+                <Link href={href}>
+                  <Icon />
+                  <span>{title}</span>
+                </Link>
               </Button>
             </TooltipTrigger>
             <TooltipContent>
-              <p>{title}</p>
+              <p>{tooltip}</p>
             </TooltipContent>
           </Tooltip>
         );
