@@ -3,7 +3,7 @@ export default async function Page({
 }: {
   params: Promise<{ slug: string[] }>;
 }) {
-  const project = await params.then((params) => params.slug?.[0] || "mogazoa");
+  const project = await params.then((params) => params.slug?.[0] || "onelog");
   const { default: Project } = await import(
     `@/app/portfolio/web/${project}.mdx`
   );
@@ -11,5 +11,5 @@ export default async function Page({
 }
 
 export function generateStaticParams() {
-  return [{ slug: [] }, { slug: ["mogazoa"] }];
+  return [{ slug: [] }, { slug: ["onelog"] }, { slug: ["mogazoa"] }];
 }

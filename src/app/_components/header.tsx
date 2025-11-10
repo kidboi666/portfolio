@@ -30,7 +30,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
-const navItems = [
+const NAV_ITEMS = [
   {
     title: "About Me",
     href: "/about_me",
@@ -88,7 +88,7 @@ function CollapsibleContent({ className }: { className?: string }) {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          {navItems.map(({ title, href, icon }) => {
+          {NAV_ITEMS.map(({ title, href, icon }) => {
             const Icon = icon;
             return (
               <DropdownMenuItem key={title} onClick={() => router.push(href)}>
@@ -126,7 +126,7 @@ function DarkModeToggleButton() {
     <Tooltip>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <TooltipTrigger>
+          <TooltipTrigger asChild>
             <Button variant="outline" size="icon">
               {mounted ? getThemeIcon(theme) : <ComputerIcon />}
             </Button>
@@ -165,7 +165,7 @@ function NavSection({
 }) {
   return (
     <div className={cn("gap-2", className)}>
-      {navItems.map(({ title, href, icon, tooltip }) => {
+      {NAV_ITEMS.map(({ title, href, icon, tooltip }) => {
         const isActive = pathname === href || pathname.includes(href);
         const Icon = icon;
         return (

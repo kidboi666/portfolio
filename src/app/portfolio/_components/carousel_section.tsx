@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import type { PLATFORM } from "@/app/portfolio/layout";
 import {
   Carousel,
   type CarouselApi,
@@ -14,8 +15,10 @@ import {
 } from "@/components/ui/carousel";
 
 export function CarouselSection({
+  platform,
   projects,
 }: {
+  platform: PLATFORM;
   projects: Record<string, any>[];
 }) {
   const [api, setApi] = useState<CarouselApi>();
@@ -32,7 +35,7 @@ export function CarouselSection({
       const currentIndex = api.selectedScrollSnap();
       setIndex(currentIndex);
       const slug = projects[currentIndex].slug;
-      router.push(`/portfolio/${slug}`);
+      router.push(`/portfolio/${platform}/${slug}`);
     });
   }, [api, router]);
 

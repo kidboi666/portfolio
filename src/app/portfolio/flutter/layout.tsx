@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   ];
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <CarouselSection projects={projects} />
+      <CarouselSection platform="flutter" projects={projects} />
       {children}
     </motion.div>
   );

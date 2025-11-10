@@ -6,7 +6,7 @@ import { PlatformToggle } from "@/app/portfolio/_components/platform_toggle";
 import { MDXLayout } from "@/components/shared/mdx_layout";
 import { ProseWrapper } from "@/components/shared/prose_wrapper";
 
-type PLATFORM = "web" | "flutter";
+export type PLATFORM = "web" | "flutter";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
