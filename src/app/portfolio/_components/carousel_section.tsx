@@ -13,26 +13,16 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-const projects = [
-  {
-    slug: "moodlog",
-    title: "MoodLog",
-    description: "Personal Project",
-    src: "/images/portfolio/moodlog_cover.png",
-  },
-  {
-    slug: "mogazoa",
-    title: "Mogazoa",
-    description: "Team Project",
-    src: "/images/portfolio/mogazoa_cover.png",
-  },
-];
-
-export function CarouselSection() {
+export function CarouselSection({
+  projects,
+}: {
+  projects: Record<string, any>[];
+}) {
   const [api, setApi] = useState<CarouselApi>();
   const [index, setIndex] = useState(0);
   const router = useRouter();
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     if (!api) return;
 
