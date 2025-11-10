@@ -29,7 +29,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <MDXLayout>
-      <ProseWrapper>
+      <ProseWrapper hasResponsiveGrid>
         <PlatformToggle value={platform} onValueChange={handlePlatformChange} />
         {children}
       </ProseWrapper>
