@@ -1,6 +1,10 @@
 import { FaFlutter } from "react-icons/fa6";
 import { GiCobweb } from "react-icons/gi";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { Button } from "@/components/ui/button";
+import {
+  ButtonGroup,
+  ButtonGroupSeparator,
+} from "@/components/ui/button-group";
 import { cn } from "@/lib/utils";
 
 type PlatformToggleProps = {
@@ -10,15 +14,12 @@ type PlatformToggleProps = {
 
 export function PlatformToggle({ value, onValueChange }: PlatformToggleProps) {
   return (
-    <ToggleGroup
-      value={value}
-      onValueChange={onValueChange}
-      type="single"
-      variant="outline"
-      spacing={2}
-      size="lg"
-    >
-      <ToggleGroupItem value="web" aria-label="toggle web projects">
+    <ButtonGroup>
+      <Button
+        variant="outline"
+        aria-label="toggle web projects"
+        onClick={() => onValueChange("web")}
+      >
         <GiCobweb className="text-orange-500 dark:text-orange-400" />
         <span
           className={cn(
@@ -28,8 +29,13 @@ export function PlatformToggle({ value, onValueChange }: PlatformToggleProps) {
         >
           Web
         </span>
-      </ToggleGroupItem>
-      <ToggleGroupItem value="flutter" aria-label="toggle flutter projects">
+      </Button>
+      <ButtonGroupSeparator />
+      <Button
+        variant="outline"
+        aria-label="toggle flutter projects"
+        onClick={() => onValueChange("flutter")}
+      >
         <FaFlutter className="text-blue-400" />
         <span
           className={cn(
@@ -39,7 +45,7 @@ export function PlatformToggle({ value, onValueChange }: PlatformToggleProps) {
         >
           Flutter
         </span>
-      </ToggleGroupItem>
-    </ToggleGroup>
+      </Button>
+    </ButtonGroup>
   );
 }

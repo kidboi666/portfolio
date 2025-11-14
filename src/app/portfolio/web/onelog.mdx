@@ -150,7 +150,7 @@ onelog/
 
 ## 주요 성과
 
-<ResponsiveGrid columnRatio={1} className="h-[400px]" >
+<ResponsiveGrid hasCode columnRatio={1}>
   ```typescript
     const HomePage = async () => {
       const queryClient = getQueryClient();
@@ -186,7 +186,7 @@ onelog/
   </div>
 </ResponsiveGrid>
 ---
-<ResponsiveGrid columnRatio={1} className="[&>*:nth-child(odd)]:md:text-left h-[400px]" >
+<ResponsiveGrid columnRatio={1} hasCode >
   ```typescript
     const HomePageView = () => {
       const { data: user } = useQuery(userQueries.getUserInfo, {
@@ -201,77 +201,3 @@ onelog/
 </ResponsiveGrid>
 
 
-
-## 개발 스크립트
-
-### 클라이언트
-```bash
-npm run dev          # 개발 서버 실행
-npm run build        # 프로덕션 빌드
-npm run start        # 프로덕션 서버 실행
-npm run lint         # ESLint 실행
-npm run gen-types    # Supabase 타입 생성
-```
-
-### 서버
-```bash
-npm run start        # 프로덕션 모드 실행
-npm run start:dev    # 개발 모드 실행 (watch)
-npm run start:debug  # 디버그 모드 실행
-npm run build        # 빌드
-npm run test         # 테스트 실행
-```
-
-## 주요 특징
-
-### 1. 감정 기록의 시각화
-잔디밭 형태의 캘린더로 감정의 흐름을 한눈에 파악할 수 있습니다. 각 날짜는 감정 농도에 따라 다른 색상으로 표시됩니다.
-
-### 2. 직관적인 에디터
-TipTap 기반의 마크다운 에디터로 이미지, 링크, 코드 블록 등 다양한 콘텐츠를 작성할 수 있습니다.
-
-### 3. 소셜 기능
-팔로우, 댓글, 좋아요 등의 소셜 기능으로 다른 사용자와 소통할 수 있습니다.
-
-### 4. 할일 관리 통합
-감정 기록과 함께 할일을 관리하여 일상을 체계적으로 정리할 수 있습니다.
-
-### 5. 반응형 디자인
-모바일, 태블릿, 데스크톱 모든 기기에서 최적화된 경험을 제공합니다.
-
-## 데이터베이스 스키마
-
-### Post (게시물)
-- `id`: 게시물 고유 ID
-- `content`: 게시물 내용
-- `emotion_level`: 감정 농도 (0-10)
-- `created_at`: 생성 시간
-- `updated_at`: 수정 시간
-- `viewed`: 조회수
-- `favorite`: 좋아요 수
-- `is_public`: 공개 여부
-
-### Comment (댓글)
-- `id`: 댓글 고유 ID
-- `content`: 댓글 내용
-- `post_id`: 게시물 ID (외래키)
-- `user_id`: 작성자 ID
-- `created_at`: 생성 시간
-
-### Garden (잔디밭)
-- `id`: 잔디밭 고유 ID
-- `year_month`: 년도와 월 (예: '2024.11')
-- `posts`: 해당 월의 게시물 정보
-- `created_at`: 생성 시간
-
-## 기여하기
-
-이 프로젝트는 개인 프로젝트이지만, 피드백과 제안은 언제나 환영합니다.
-
-## 라이선스
-
-이 프로젝트는 개인 프로젝트입니다.
-
-## 문의
-
-프로젝트에 대한 문의사항이 있으시면 이슈를 등록해주세요.

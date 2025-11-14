@@ -10,8 +10,25 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: "안녕하세요. 이진욱입니다.",
-  description: "안녕하세요 이진욱의 포트폴리오 입니다.",
+  title: "이진욱 | Frontend Developer",
+  description: "React, Flutter, Dart, TypeScript, Next.js 개발자 포트폴리오",
+  keywords: [
+    "프론트엔드",
+    "개발자",
+    "포트폴리오",
+    "React",
+    "Flutter",
+    "Dart",
+    "TypeScript",
+    "Next.js",
+  ],
+
+  openGraph: {
+    title: "이진욱 - Frontend Developer",
+    description: "열정적인 프론트엔드 개발자",
+    url: "https://portfolio-leejinwook.vercel.app",
+    images: ["/images/portfolio/moodlog_cover.png"],
+  },
 };
 
 export default function RootLayout({

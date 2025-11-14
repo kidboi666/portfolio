@@ -22,18 +22,18 @@ export function useMDXComponents(): MDXComponents {
       );
     },
     h1: ({ children, className }) => (
-      <h1 className={cn(className, "text-sky-900 dark:text-slate-400")}>
+      <h1 className={cn(className, "text-sky-900 dark:text-slate-200")}>
         {children}
       </h1>
     ),
     h2: ({ children, className }) => (
-      <h2 className={cn(className, "text-sky-600 dark:text-slate-500")}>
+      <h2 className={cn(className, "text-sky-600 dark:text-slate-300")}>
         {children}
       </h2>
     ),
     h3: ({ children, className }) => (
       <h3
-        className={cn(className, "font-bold text-sky-900 dark:text-slate-400")}
+        className={cn(className, "font-bold text-sky-900 dark:text-slate-300")}
       >
         {children}
       </h3>

@@ -1,5 +1,5 @@
-import * as motion from "motion/react-client";
 import { CarouselSection } from "@/app/portfolio/_components/carousel_section";
+import { TransitionContainer } from "@/components/shared/transition_container";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const projects = [
@@ -11,9 +11,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     },
   ];
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <TransitionContainer>
       <CarouselSection platform="flutter" projects={projects} />
       {children}
-    </motion.div>
+    </TransitionContainer>
   );
 }

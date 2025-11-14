@@ -3,11 +3,13 @@ import { cn } from "@/lib/utils";
 
 interface ResponsiveGridProps extends PropsWithChildren {
   columnRatio?: 1 | 2 | 3 | 4;
+  hasCode?: boolean;
   className?: string;
 }
 
 export function ResponsiveGrid({
   columnRatio = 2,
+  hasCode = false,
   className,
   children,
 }: ResponsiveGridProps) {
@@ -23,7 +25,7 @@ export function ResponsiveGrid({
       className={cn(
         "grid grid-cols-1 gap-8",
         responsiveClasses[columnRatio],
-        "[&>*:nth-child(odd)]:md:text-right",
+        hasCode ? "h-[400px]" : "[&>*:nth-child(odd)]:md:text-right",
         className,
       )}
     >

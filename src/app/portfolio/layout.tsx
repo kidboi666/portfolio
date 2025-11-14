@@ -3,7 +3,6 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { PlatformToggle } from "@/app/portfolio/_components/platform_toggle";
-import { MDXLayout } from "@/components/shared/mdx_layout";
 import { ProseWrapper } from "@/components/shared/prose_wrapper";
 
 export type PLATFORM = "web" | "flutter";
@@ -16,6 +15,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [platform, setPlatform] = useState<PLATFORM>(initialPlatform);
 
   const handlePlatformChange = (value: string) => {
+    console.log(value);
+    if (value === platform) return;
     setPlatform(value as PLATFORM);
   };
 
@@ -28,11 +29,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }, [platform, pathname, router]);
 
   return (
-    <MDXLayout>
-      <ProseWrapper hasResponsiveGrid>
-        <PlatformToggle value={platform} onValueChange={handlePlatformChange} />
-        {children}
-      </ProseWrapper>
-    </MDXLayout>
+    <ProseWrapper hasResponsiveGrid className="p-4">
+      <PlatformToggle value={platform} onValueChange={handlePlatformChange} />
+      {children}
+    </ProseWrapper>
   );
 }
