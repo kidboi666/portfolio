@@ -6,7 +6,6 @@ import Image from "next/image";
 > 하루 한 문장씩 - 당신의 감정을 기록하세요.
 
 <br />
-
 <br />
 
   ## 프로젝트 개요
@@ -45,7 +44,7 @@ import Image from "next/image";
 <br />
 
 ## 개발 방식
-<ResponsiveGrid>
+<ResponsiveGrid columnRatio={1} className='[&>*:first-child]:justify-self-center'>
   <Image src='/images/portfolio/onelog/planning.png' alt='개발 방식 이미지' width={400} height={400} className='rounded-lg shadow-lg' />
 
   <div>
@@ -56,7 +55,7 @@ import Image from "next/image";
   </div>
 </ResponsiveGrid>
 ---
-<ResponsiveGrid>
+<ResponsiveGrid columnRatio={1} className='[&>*:first-child]:justify-self-center'>
   <Image src='/images/portfolio/onelog/components.png' alt="shadcnui 컴포넌트들 이미지" width={400} height={400} className='rounded-lg shadow-lg' />
 
   <div>
@@ -65,7 +64,7 @@ import Image from "next/image";
   </div>
 </ResponsiveGrid>
 ---
-<ResponsiveGrid>
+<ResponsiveGrid columnRatio={1} className='[&>*:first-child]:justify-self-center'>
   <Image src='/images/portfolio/onelog/onelog_erd.png' alt='백엔드 ERD 이미지' width={400} height={400} className='rounded-lg shadow-lg' />
 
   <div>
@@ -149,9 +148,9 @@ onelog/
 <br />
 <br />
 
-## 주요 특징
+## 주요 성과
 
-<ResponsiveGrid columnRatio={1} className="[&>*:nth-child(odd)]:md:text-left h-[400px]" >
+<ResponsiveGrid columnRatio={1} className="h-[400px]" >
   ```typescript
     const HomePage = async () => {
       const queryClient = getQueryClient();

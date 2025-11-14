@@ -1,7 +1,5 @@
-"use client";
-
 import { ArrowUpRightIcon } from "lucide-react";
-import { motion } from "motion/react";
+import * as motion from "motion/react-client";
 import Link from "next/link";
 import { Introduce } from "@/app/_components/introduce";
 import { ProseWrapper } from "@/components/shared/prose_wrapper";
@@ -10,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export default function Home() {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0.2 }}
       animate={{ opacity: 1 }}
       className="flex h-[calc(100vh-5rem)] w-full flex-col items-center justify-center"
     >

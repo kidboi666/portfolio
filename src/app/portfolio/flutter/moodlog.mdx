@@ -1,79 +1,148 @@
+import {ResponsiveGrid} from "../../../components/shared/responsive_grid";
 
+<br/>
+
+> AI 기반 감정 일기 - 당신의 감정을 기록하고 위로받으세요.
+
+<br />
+<br />
+
+  ## 프로젝트 개요
+
+<ResponsiveGrid>
+  ### Project Name
+
+  - MoodLog (무드로그)
+</ResponsiveGrid>
 ---
+<ResponsiveGrid>
+  ### Overview
 
-# 🌈 MoodLog - AI 기반 감정 일기 앱
-
-## 📋 프로젝트 개요
-
-**MoodLog**는 사용자의 일상적인 감정을 기록하고 AI가 맞춤형 위로 메시지를 제공하는 크로스플랫폼 모바일 앱입니다. 로그인 없이 완전한 프라이버시를 보장하며, 로컬 우선 아키텍처로 설계되어 모든 데이터가 사용자 기기에 안전하게 저장됩니다.
-
-**배포 현황**
-- iOS App Store 및 Google Play Store 정식 출시
-- 3개 언어 지원 (한국어, 영어, 일본어)
-- 프로덕션 환경에서 안정적으로 운영 중
-
-**개발 기간**: 2024년 ~ 현재 (지속적 개선 중)
-**역할**: 1인 개발 (기획, 디자인, 개발, 배포, 운영)
-
+  - MoodLog는 사용자의 일상적인 감정을 기록하고 AI가 맞춤형 위로 메시지를 제공하는 크로스플랫폼 모바일 앱입니다. 로그인 없이 완전한 프라이버시를 보장하며, 로컬 우선 아키텍처로 설계되어 모든 데이터가 사용자 기기에 안전하게 저장됩니다.
+</ResponsiveGrid>
 ---
+<ResponsiveGrid>
+  ### Deployment Status
 
-## 🛠 기술 스택
-
-### Frontend
-- **Flutter** 3.0+ - 크로스플랫폼 UI 프레임워크
-- **Dart** 3.0+ - 프로그래밍 언어
-- **Provider** - 상태 관리 (MVVM 패턴)
-- **Go Router** - 선언적 라우팅
-- **Freezed** - 불변 데이터 클래스 자동 생성
-
-### Backend & Services
-- **Drift (SQLite)** - 로컬 데이터베이스
-- **Firebase**
-- Gemini AI: AI 위로 메시지 생성
-- Analytics: 사용자 행동 분석
-- **Google Mobile Ads** - AdMob 광고 수익화
-
-### Architecture & Patterns
-- **Clean Architecture** - 계층 분리 및 의존성 관리
-- **MVVM (Model-View-ViewModel)** - UI와 비즈니스 로직 분리
-- **Repository Pattern** - 데이터 소스 추상화
-- **UseCase Pattern** - 비즈니스 로직 캡슐화
-
+  - iOS App Store 및 Google Play Store 정식 출시
+  - 3개 언어 지원 (한국어, 영어, 일본어)
+  - 프로덕션 환경에서 안정적으로 운영 중
+</ResponsiveGrid>
 ---
+<ResponsiveGrid>
+  ### Development Period
 
-## ✨ 주요 기능
-
-### 1. 감정 기록 시스템
-- 5단계 감정 선택 (매우 좋음 ~ 매우 나쁨)
-- 텍스트, 이미지, 태그를 활용한 다양한 표현
-- 직관적인 UI/UX로 일기 작성 경험 최적화
-
-### 2. AI 위로 메시지
-- **Gemini AI** 통합으로 일기 내용을 분석한 개인 맞춤형 응답
-- 하루 1회 제한으로 특별함 유지
-- 사용자 감정에 공감하는 지능적 메시지 생성
-
-### 3. 통계 및 인사이트
-- GitHub 스타일 연간 활동 히트맵
-- 주간/월간/연간 감정 분포 차트
-- 연속 기록 달성 현황 추적
-- CustomPainter를 활용한 커스텀 차트 구현
-
-### 4. 글로벌 지원
-- 3개 언어 다국어 지원 (i18n)
-- 다양한 폰트 옵션 (Pretendard, 이서윤체, 달의궤도체 등)
-- 라이트/다크 테마 자동 전환
-
-### 5. 100% 프라이빗
-- 로그인 불필요 (계정 생성 없음)
-- 로컬 우선 데이터 저장
-- 오프라인 완전 지원
-
+  - 2024년 ~ 현재 (지속적 개선 중)
+</ResponsiveGrid>
 ---
+<ResponsiveGrid>
+  ### Role
 
-## 🏗 아키텍처 및 설계
+  - 1인 개발 (기획, 디자인, 개발, 배포, 운영)
+</ResponsiveGrid>
+<ResponsiveGrid>
+  ### Project Links
 
-### Clean Architecture 구조
+  - **GitHub**: [github.com/kidboi666/moodlog](https://github.com/kidboi666/moodlog)
+  - **App Store**: [MoodLog on iOS](https://apps.apple.com/kr/app/%EB%AC%B4%EB%93%9C%EB%A1%9C%EA%B7%B8/id6752590873)
+  - **Play Store**: [MoodLog on Android](https://play.google.com/store/apps/details?id=com.kidboi666.moodlog)
+</ResponsiveGrid>
+
+<br />
+<br />
+
+## 기술 스택
+<ResponsiveGrid>
+  ### Frontend
+
+  - **Flutter** 3.0+\
+  크로스플랫폼 UI 프레임워크로 단일 코드베이스로 iOS/Android 앱 개발
+  - **Dart** 3.0+\
+  강력한 타입 시스템과 null safety로 안정적인 코드 작성
+  - **Provider**\
+  MVVM 패턴 기반 상태 관리로 UI와 비즈니스 로직 분리
+  - **Go Router**\
+  선언적 라우팅으로 딥링크 및 네비게이션 관리
+  - **Freezed**\
+  불변 데이터 클래스 자동 생성으로 보일러플레이트 코드 감소
+</ResponsiveGrid>
+---
+<ResponsiveGrid>
+  ### Backend & Services
+
+  - **Drift (SQLite)**\
+  타입 안전한 쿼리 작성 가능한 로컬 데이터베이스 ORM
+  - **Firebase Gemini AI**\
+  일기 내용을 분석하여 맞춤형 위로 메시지 생성
+  - **Firebase Analytics**\
+  사용자 행동 분석 및 데이터 드리븐 의사결정 지원
+  - **Google Mobile Ads**\
+  AdMob 통합으로 앱 수익화 구조 마련
+</ResponsiveGrid>
+---
+<ResponsiveGrid>
+  ### Architecture & Patterns
+
+  - **Clean Architecture**\
+  계층 분리 및 의존성 관리로 테스트 가능하고 확장 가능한 구조 구축
+  - **MVVM (Model-View-ViewModel)**\
+  UI와 비즈니스 로직 완전 분리로 유지보수성 향상
+  - **Repository Pattern**\
+  데이터 소스 추상화로 로컬 DB와 외부 API 간 일관된 인터페이스 제공
+  - **UseCase Pattern**\
+  비즈니스 로직 캡슐화로 단일 책임 원칙 준수
+</ResponsiveGrid>
+
+<br />
+<br />
+
+## 주요 기능
+
+<ResponsiveGrid>
+  ### 1. 감정 기록 시스템
+
+  - 5단계 감정 선택 (매우 좋음 ~ 매우 나쁨)
+  - 텍스트, 이미지, 태그를 활용한 다양한 표현
+  - 직관적인 UI/UX로 일기 작성 경험 최적화
+</ResponsiveGrid>
+---
+<ResponsiveGrid>
+  ### 2. AI 위로 메시지
+
+  - **Gemini AI** 통합으로 일기 내용을 분석한 개인 맞춤형 응답
+  - 하루 1회 제한으로 특별함 유지
+  - 사용자 감정에 공감하는 지능적 메시지 생성
+</ResponsiveGrid>
+---
+<ResponsiveGrid>
+  ### 3. 통계 및 인사이트
+
+  - GitHub 스타일 연간 활동 히트맵
+  - 주간/월간/연간 감정 분포 차트
+  - 연속 기록 달성 현황 추적
+  - CustomPainter를 활용한 커스텀 차트 구현
+</ResponsiveGrid>
+---
+<ResponsiveGrid>
+  ### 4. 글로벌 지원
+
+  - 3개 언어 다국어 지원 (한국어, 영어, 일본어)
+  - 다양한 폰트 옵션 (Pretendard, 이서윤체, 달의궤도체 등)
+  - 라이트/다크 테마 자동 전환
+</ResponsiveGrid>
+---
+<ResponsiveGrid>
+  ### 5. 100% 프라이빗
+
+  - 로그인 불필요 (계정 생성 없음)
+  - 로컬 우선 데이터 저장 (Drift SQLite)
+  - 오프라인 완전 지원
+</ResponsiveGrid>
+
+<br />
+<br />
+
+## 프로젝트 구조
 
 ```text
 lib/
@@ -86,109 +155,157 @@ lib/
     └── widgets/       # 공통 위젯
 ```
 
-### 주요 설계 패턴
+<br />
+<br />
 
-**MVVM + Provider**
-- View와 비즈니스 로직 완전 분리
-- `ChangeNotifier` 기반 반응형 상태 관리
-- `context.select`를 활용한 최적화된 리빌드 제어
+## 아키텍처 및 설계 패턴
 
-**Repository Pattern**
-- 데이터 소스 추상화로 테스트 용이성 확보
-- 로컬 DB와 외부 API 간 일관된 인터페이스 제공
+<ResponsiveGrid>
+  ### MVVM + Provider
 
-**의존성 주입 (DI)**
-- Provider 기반 DI 컨테이너 구현
-- 느슨한 결합으로 유지보수성 향상
-
+  - View와 비즈니스 로직 완전 분리
+  - `ChangeNotifier` 기반 반응형 상태 관리
+  - `context.select`를 활용한 최적화된 리빌드 제어
+</ResponsiveGrid>
 ---
+<ResponsiveGrid>
+  ### Repository Pattern
 
-## 💪 개발 과정 및 도전 과제
-
-### 1. 대규모 리팩토링 수행
-**문제**: WriteViewModel이 694줄, 11개의 의존성을 가진 God Object로 성장
-- 단일 책임 원칙(SRP) 위반
-- 테스트 작성 어려움
-- 코드 가독성 저하
-
-**해결**:
-- Facade 패턴으로 관련 UseCase 그룹화 (AI 기능 통합)
-- Coordinator 패턴으로 위치/날씨 로직 조율
-- Mixin을 활용한 기능별 코드 분할
-- 의존성을 11개 → 6개로 45% 감소 목표
-
-### 2. 상태 관리 일관성 확보
-**문제**: StatefulWidget의 setState와 ViewModel 패턴 혼재 사용
-- 14개 파일에서 일관성 없는 상태 관리
-- 예측 불가능한 UI 업데이트 흐름
-
-**해결**:
-- `AsyncStateMixin` 구현으로 비동기 상태 표준화
-- 모든 UI 상태를 ViewModel로 통합
-- Loading/Success/Error 상태를 일관되게 처리
-
-### 3. Clean Architecture 원칙 준수
-**문제**: 도메인/데이터 계층에서 Flutter UI 의존성 참조
-- 프레임워크 독립성 위배
-- 레이어 간 경계 모호
-
-**해결** (진행 중):
-- 도메인 계층의 Flutter 참조 제거
-- Entity와 Model 명확히 분리
-- 의존성 방향 규칙 엄격히 적용
-
-### 4. 크로스플랫폼 배포 경험
-- iOS App Store 및 Google Play 배포 프로세스 완료
-- Flavor 기반 환경 분리 (development/staging/production)
-- Firebase 프로젝트별 구성 자동화
-- 사업자 등록 및 법적 요구사항 처리
-
+  - 데이터 소스 추상화로 테스트 용이성 확보
+  - 로컬 DB와 외부 API 간 일관된 인터페이스 제공
+  - Mock 객체 주입으로 단위 테스트 작성 용이
+</ResponsiveGrid>
 ---
+<ResponsiveGrid>
+  ### 의존성 주입 (DI)
 
-## 📊 성과 및 학습
+  - Provider 기반 DI 컨테이너 구현
+  - 느슨한 결합으로 유지보수성 향상
+  - 테스트 시 의존성 교체 용이
+</ResponsiveGrid>
 
-### 기술적 성과
-- **테스트 가능한 코드**: Repository 패턴으로 Mock 객체 주입 용이
-- **성능 최적화**: `const` 생성자 활용, SliverList로 효율적 스크롤 구현
-- **코드 품질**: `flutter analyze` 경고 0개 달성 목표
-- **다국어화**: 40개 이상의 다국어 키 관리
+<br />
+<br />
 
-### 비즈니스 성과
-- iOS/Android 양 플랫폼 정식 출시
-- AdMob 통합으로 수익화 구조 마련
-- Firebase Analytics 기반 데이터 드리븐 개선
+## 개발 과정 및 도전 과제
 
-### 개인 성장
-- **아키텍처 이해**: Clean Architecture를 실전 프로젝트에 적용하며 계층 분리의 중요성 체득
-- **리팩토리 스킬**: 레거시 코드를 점진적으로 개선하는 전략 수립 및 실행
-- **완성도**: 기획부터 배포, 운영까지 전체 라이프사이클 경험
-- **문제 해결**: 694줄의 God Object를 체계적으로 분해하는 과정에서 설계 원칙 내재화
+<ResponsiveGrid >
+    ### 1. 대규모 리팩토링 수행
 
+
+  <div>
+    **문제**
+    - 단일 책임 원칙(SRP) 위반
+    - 테스트 작성 어려움
+    - 코드 가독성 저하
+
+    **해결**
+    - Facade 패턴으로 관련 UseCase 그룹화 (AI 기능 통합)
+    - Coordinator 패턴으로 위치/날씨 로직 조율
+    - Mixin을 활용한 기능별 코드 분할
+    - 의존성을 11개 → 6개로 45% 감소 목표
+  </div>
+</ResponsiveGrid>
 ---
+<ResponsiveGrid>
+    ### 2. 상태 관리 일관성 확보
 
-## 🔮 향후 계획
+  <div>
+    **문제**
+    - StatefulWidget의 setState와 ViewModel 패턴 혼재 사용
+    - 14개 파일에서 일관성 없는 상태 관리
+    - 예측 불가능한 UI 업데이트 흐름
 
-### 단기 목표 (1-2개월)
-- [ ] WriteViewModel 리팩토링 완료 (의존성 45% 감소)
-- [ ] 통합 테스트 및 단위 테스트 커버리지 80% 이상
-- [ ] 통계 화면 재설계 (CustomPainter 차트 14개 구현 완료)
-
-### 중기 목표 (3-6개월)
-- [ ] CI/CD 파이프라인 구축 (GitHub Actions)
-- [ ] 위젯 테스트 자동화
-- [ ] 사용자 피드백 기반 UX 개선
-
-### 장기 목표
-- [ ] 백업/복구 기능 추가
-- [ ] 더 다양한 통계 시각화
-- [ ] 접근성(Accessibility) 개선
-
+    **해결**
+    - `AsyncStateMixin` 구현으로 비동기 상태 표준화
+    - 모든 UI 상태를 ViewModel로 통합
+    - Loading/Success/Error 상태를 일관되게 처리
+  </div>
+</ResponsiveGrid>
 ---
+<ResponsiveGrid>
+    ### 3. Clean Architecture 원칙 준수
 
-## 🔗 링크
+  <div>
+    **문제**
+    - 도메인/데이터 계층에서 Flutter UI 의존성 참조
+    - 프레임워크 독립성 위배
+    - 레이어 간 경계 모호
 
-- **GitHub**: [github.com/kidboi666/moodlog](https://github.com/kidboi666/moodlog)
-- **App Store**: [MoodLog on iOS](https://apps.apple.com/kr/app/%EB%AC%B4%EB%93%9C%EB%A1%9C%EA%B7%B8/id6752590873)
-- **Play Store**: [MoodLog on Android](https://play.google.com/store/apps/details?id=com.kidboi666.moodlog)
-
+    **해결** (진행 중)
+    - 도메인 계층의 Flutter 참조 제거
+    - Entity와 Model 명확히 분리
+    - 의존성 방향 규칙 엄격히 적용
+  </div>
+</ResponsiveGrid>
 ---
+<ResponsiveGrid>
+    ### 4. 크로스플랫폼 배포 경험
+
+  <div>
+    - iOS App Store 및 Google Play 배포 프로세스 완료
+    - Flavor 기반 환경 분리 (development/staging/production)
+    - Firebase 프로젝트별 구성 자동화
+    - 사업자 등록 및 법적 요구사항 처리
+  </div>
+</ResponsiveGrid>
+
+<br />
+<br />
+
+## 성과 및 학습
+
+<ResponsiveGrid>
+  ### 기술적 성과
+
+  - **테스트 가능한 코드**: Repository 패턴으로 Mock 객체 주입 용이
+  - **성능 최적화**: `const` 생성자 활용, SliverList로 효율적 스크롤 구현
+  - **코드 품질**: `flutter analyze` 경고 0개 달성 목표
+  - **다국어화**: 40개 이상의 다국어 키 관리
+</ResponsiveGrid>
+---
+<ResponsiveGrid>
+  ### 비즈니스 성과
+
+  - iOS/Android 양 플랫폼 정식 출시
+  - AdMob 통합으로 수익화 구조 마련
+  - Firebase Analytics 기반 데이터 드리븐 개선
+</ResponsiveGrid>
+---
+<ResponsiveGrid>
+  ### 개인 성장
+
+  - **아키텍처 이해**: Clean Architecture를 실전 프로젝트에 적용하며 계층 분리의 중요성 체득
+  - **리팩토리 스킬**: 레거시 코드를 점진적으로 개선하는 전략 수립 및 실행
+  - **완성도**: 기획부터 배포, 운영까지 전체 라이프사이클 경험
+  - **문제 해결**: 694줄의 God Object를 체계적으로 분해하는 과정에서 설계 원칙 내재화
+</ResponsiveGrid>
+
+<br />
+<br />
+
+## 향후 계획
+
+<ResponsiveGrid>
+  ### 단기 목표 (1-2개월)
+
+  - WriteViewModel 리팩토링 완료 (의존성 45% 감소)
+  - 통합 테스트 및 단위 테스트 커버리지 80% 이상
+  - 통계 화면 재설계 (CustomPainter 차트 14개 구현 완료)
+</ResponsiveGrid>
+---
+<ResponsiveGrid>
+  ### 중기 목표 (3-6개월)
+
+  - CI/CD 파이프라인 구축 (GitHub Actions)
+  - 위젯 테스트 자동화
+  - 사용자 피드백 기반 UX 개선
+</ResponsiveGrid>
+---
+<ResponsiveGrid>
+  ### 장기 목표
+
+  - 백업/복구 기능 추가
+  - 더 다양한 통계 시각화
+  - 접근성(Accessibility) 개선
+</ResponsiveGrid>

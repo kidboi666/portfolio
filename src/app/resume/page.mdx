@@ -1,118 +1,132 @@
 import {AvatarSection} from "@/app/resume/_components/avatar_section";
 import {ResponsiveGrid} from "@/components/shared/responsive_grid";
 
+<br/>
 
 <ResponsiveGrid className="gap-8">
   <AvatarSection/>
   <div className="flex flex-col justify-between">
-    <div>
-      # 이진욱.
-      *한국방송통신대학교 컴퓨터과학과 1학년 재학중*
+    <div className='text-xs'>
+      # 보면 바로 만들고, 만들면 바로 배포하는 개발자
+      # 이진욱 입니다.
     </div>
 
-    <div>
-      **| Github.** *github.com/kidboi666*
-      **| Email.** *log.mind.365@gmail.com*
-    </div>
+      **Github.** <em>https://github.com/kidboi666</em>\
+      **Email.** <em>log.mind.365@gmail.com</em>
   </div>
 </ResponsiveGrid>
 
----
+<br />
+<br />
 
-## | SUMMARY.
+## 핵심 역량.
 
-### | 현대적인 웹 아키텍처 구현 및 개선 능력
-Next.js App Router와 Supabase 기반 소셜 미디어 플랫폼 개발 (3개월). 계층형 구조에서 Feature-Sliced Design 아키텍처 마이그레이션을 통해 확장 가능한 코드 구조 설계 경험.
+### 아키텍처 설계 능력
+계층형 구조의 의존성 문제를 해결하기 위해 Feature-Sliced Design로의 대규모 마이그레이션을 진행하였습니다. 6개 레이어 분리와 명확한 규칙 수립으로 신규 기능 추가 시간을 50% 단축하고 코드 재사용성을 향상시켰습니다.
 
-### | 빠른 습득력과 목표를 향한 몰입
-부트캠프 3개 팀 프로젝트, 평균 기여도 40-46% (팀원 4-5명, 커밋 수 기준). React Native, Flutter를 거쳐 웹 프론트엔드까지 다양한 기술 스택을 학습하며 크로스 플랫폼 개발 전반에 대한 이해 보유. 세대 환기 업체 근무 당시엔 남들보다 2배 빠른 업무 속도를 인정받아 1년 반만에 일용직에서 외주 업체로 독립.
+### 빠른 학습과 높은 기여도
+Next.js 부터 React Native, Flutter 까지 빠르게 학습해 크로스 플랫폼 개발에 적용했습니다. 부트캠프 3개 팀 프로젝트에서 평균 40~46%의 높은 기여도(커밋 기준)를 달성하며 주도적으로 참여했습니다.
 
-### | 주도적인 학습 태도와 코드 품질 추구
-AI 코딩 도구 (Claude Code)를 활용한 효율적인 개발과 대규모 리팩토링 경험. 가상 시나리오를 통한 구조 개선과 지속적인 코드 품질 관리로 실무 수준의 완성도 지향. 공통 컴포넌트 설계와 예외 처리 표준화를 통한 코드 일관성 확보.
+### 1인 개발 완수 경험
+기획부터 32,000+줄의 코드 작성(Flutter), MVVM + Clean Architecture 적용, DB 설계까지 1인 개발 전 과정을 완수했습니다. Google Play / App Store 정식 출시 및 4개월간 29회의 업데이트를 직접 운영하며 전체 사이클을 경험했습니다.
 
----
+<br />
+<br />
 
-## | SKILLS.
-*제가 가진 업무 기술들 입니다.*
+## 보유 기술.
 
 <ResponsiveGrid>
-  ### | Primary Stack
+  ### 주요 기술 스택
 
   - Framework : Next.js, React, TypeScript, JavaScript
-  - State Management : TanStack Query (서버 상태 관리 및 캐싱), Zustand (전역 UI 상태), Redux Toolkit (전역 상태 및 서버
-  상태 관리)
+  - State Management : TanStack Query (서버 상태 관리), Zustand (클라이언트 전역 상태)
   - Architecture : Feature-Sliced Design (FSD) 아키텍처 설계 및 마이그레이션
   - Database & Backend : Supabase, Firebase, Drizzle ORM
-  - Styling : tailwindcss, shadcn/ui를 활용한 반응형 UI 구현
+  - Styling : tailwindcss, shadcn/ui를 활용한 반응형 UI
 </ResponsiveGrid>
 
+---
+
 <ResponsiveGrid>
-  ### | Secondary Stack
+  ### 보조 기술 스택
 
   - Framework : Flutter, React Native, Expo
   - Architecture : MVVM + Clean Architecture 기반 모바일 앱 설계
   - Deployment : Google Play Store, App Store 출시 및 4개월 이상 운영 경험
 </ResponsiveGrid>
 
----
+<br />
+<br />
 
-## | MOBILE PROJECT EXPERIENCE.
-
-### | OneLog (하루한줄) *- 개인 프로젝트*
-*2024.09 - 2024.12 (3개월)*\
-*2025.10 부터 아키텍처 개선 진행중*
+## 프로젝트 경험.
 
 <ResponsiveGrid>
-  ### | 개요
+  ### 웹 개인 프로젝트
 
-  - Next.js기반 소셜 미디어 플랫폼.
-  - 초기 계층형 구조에서 Feature-Sliced Design으로 아키텍처 개선 진행중.
-  - Claude Code를 활용한 리팩토링으로 코드 품질 개선
+  <div>
+  ## OneLog (하루한줄)
+  *2024.09 - 2024.12 (3개월)*\
+  *2025.10 부터 전체 FSD 구조 개선 진행중*
+  </div>
 </ResponsiveGrid>
 
 <ResponsiveGrid>
-  ### | 기술 스택
+  ### "코드가 커질수록 설계가 보였다."
+
+  - 처음엔 계층형 구조 (components, hooks, services) 로 시작했지만, 기능이 늘어날수록 컴포넌트 의존성이 꼬이고 재사용이 어려워졌습니다. 그래서 Feature-Sliced Design으로 전체 아키텍처 재설계를 진행중에 있습니다.
+</ResponsiveGrid>
+---
+<ResponsiveGrid>
+  ### 기술 스택
 
   - Next.js App Router, React, TypeScript, Feature-Sliced Design (FSD), TanStack Query, Zustand,
   Supabase, Drizzle ORM, tailwindcss, shadcn/ui, Claude Code
 
 </ResponsiveGrid>
-
+---
 <ResponsiveGrid>
-  ### | 주요 구현 기능
+  ### 주요 구현 기능
 
-  - 소셜 미디어 핵심 기능 : 포스팅, 댓글, 좋아요, 팔로우/언팔로우 시스템
+  - 소셜 미디어 핵심 기능 : 포스팅, 댓글, 좋아요, 팔로우/언팔로우
   - 상태 낙관적 업데이트 : TanStack Query의 onMutate를 통한 Optimistic Update 구현
   - 인증 시스템 : Supabase Auth 기반 사용자 인증 및 권한 관리
 </ResponsiveGrid>
+---
+<ResponsiveGrid>
+  ### 기술적 성과
 
+  - 아키텍처 진화 경험 : 초기 계층형 구조 => FSD 대규모 리팩토링. Claude Code와 Gemini CLI로 반복 작업 최소화, 핵심 로직 설계에 집중
+  - Baas 서비스를 통한 DB 설계 및 ORM 활용 : auth와 storage는 Supabase 자체 Data API 활용, ORM을 활용한 데이터 통신과 스키마 버전 관리
+</ResponsiveGrid>
+---
+<ResponsiveGrid>
+  ### 해결한 문제들
+
+  - 복잡해지는 의존성\
+    문제: 계층형 구조에서 컴포넌트 간 순환 참조로 수정 어려움\
+    해결: FSD 6개 레이어로 도메인 분리, 명확한 의존성 규칙 수립\
+    결과: 신규 기능 추가 **시간 50% 단축**, 코드 **재사용성 향상**
+  - 반복되는 서버 요청과 느린 사용자 경험\
+    문제: 같은 데이터를 여러 컴포넌트에서 중복 요청\
+    해결: TanStack Query 캐싱 전략 + Optimistic Update\
+    결과: 초기 **로딩 40% 단축**, **즉각 반응**하는 UI 구현
+</ResponsiveGrid>
+
+<br />
+<br />
 
 <ResponsiveGrid>
-  ### | 기술적 성과 및 아키텍처 설계
+  ### 플러터 개인 프로젝트
 
-  - 아키텍처 진화 경험 : 초기 계층형 구조 (components, hooks, services) 에서 Feature-Sliced Design (app, pages,
-  widgets, features, entities, shared)으로 대규모 리팩토링 수행. 기능별 응집도 향상 및 의존성 관리 개선.
-  - FSD 아키텍처 실전 적용 : 6개 레이어로 도메인 로직 분리, 계층 간 의존성 규칙 (entities -> features -> widgets)을 통한 순환 참조 방지.
-  - Server Component 활용 : 초기 UI 로딩 성능, SEO 개선 등을 위한 용도로 서버 컴포넌트 활용
-  - Supabase / Drizzle ORM 백엔드 인프라 구축 : auth와 storage는 Supabase 자체 Data API 활용, ORM을 활용한 데이터 통신과 스키마
-  버전 관리
-  - TanStack Query 기반 데이터 페칭 전략 구축 : 캐싱, Invalidation, Optimistic Update를 활용한 사용자 경험 개선
-  - Zustand 상태 관리 : 모달 상태를 전역에서 관리하여 UI 상태 관리 경량화
+  <div>
+    ## MoodLog (무드로그)
+    *2025.02 - 2025.08 (6개월)*\
+    *운영 - 고도화 진행중*
+  </div>
 </ResponsiveGrid>
 
 <ResponsiveGrid>
-  ### | 개발 프로세스 및 도구 활용
-
-  - Claude Code 활용 대규모 리팩토링 : AI 도구를 활용한 보일러 플레이트 생성 및 코드 구조 개선으로 핵심 비즈니스 로직 개발에 집중
-</ResponsiveGrid>
-
-
-### | 무드로그 (iOS, Android) *- 개인 프로젝트*
-*2025.02 - 2025.08 (6개월)*\
-*운영 - 고도화 진행중*
-
-<ResponsiveGrid>
-  ### | 기술 스택 및 활용
+  ### 기술 스택 및 활용
 
   - State Management : Provider (ChangeNotifier 기반 10+ ViewModels)
   - Navigation : go_router (선언적 라우팅, Analytics Observer 통합)
@@ -122,9 +136,9 @@ AI 코딩 도구 (Claude Code)를 활용한 효율적인 개발과 대규모 리
   - Code Generation : Freezed (Immutable models), build_runner
   - Monetization : Google Mobile Ads (배너 광고)
 </ResponsiveGrid>
-
+---
 <ResponsiveGrid>
-  ### | 기술적 성과
+  ### 기술적 성과
 
   - 32,000줄+ 프로덕션 코드, 270개 파일로 구성된 프로젝트 단독 설계
   - MVVM + Clean Architecture (Presentation/Domain/Data) 구조로 확장 가능한 코드 베이스 구축
@@ -132,121 +146,132 @@ AI 코딩 도구 (Claude Code)를 활용한 효율적인 개발과 대규모 리
   - Drift ORM 활용한 7개 테이블 관계형 DB 설계
   - Development/Staging/Production 3개 환경 분리 및 Flavor 시스템 구축
 </ResponsiveGrid>
-
+---
 <ResponsiveGrid>
-  ### | 앱 출시 및 운영 경험
+  ### 앱 출시 및 운영 경험
 
   - Google Play Store, App Store 정식 출시 및 4개월간 운영 (v1.1.3, 빌드 65)
   - 29회의 버전 업데이트와 버그 수정으로 안정성 지속 개선
   - Admob 광고 통합 및 3개 언어 (한국어/영어/일본어) 지원으로 글로벌 사용자 대응
   - QA 2주, 앱 스토어 심사 대응, 개인사업자 등록까지 서비스 런칭 전 과정 경험
 </ResponsiveGrid>
-
+---
 <ResponsiveGrid>
-  ### | 설계 및 아키텍처 의사결정
+  ### 설계 및 아키텍처 의사결정
 
   - React Native MVP 개발 후 성능 이슈 및 DX 불만족으로 Flutter 전환 결정 (2개월 만에 재작성)
   - 오프라인 우선 아키텍처로 로그인 없이 사용 가능한 UX 구현
   - Provider 기반 상태 관리로 UI 구현, ChangeNotifier 패턴 활용
   - Repository Pattern으로 데이터 소스 추상화, 테스트 가능한 코드 구조 유지
 </ResponsiveGrid>
-
+---
 <ResponsiveGrid>
-  ### | 개발 프로세스 및 도구 활용
+  ### 개발 프로세스 및 도구 활용
   - Claude Code, Gemini CLI 활용한 보일러 플레이트 작성으로 핵심 로직 개발에 집중
   - Git을 활용한 버전 관리 (517+커밋)
   - Flutter Extension 활용한 개발 생산성 향상
   - Flavor 시스템으로 개발/스테이징/프로덕션 환경 분리
 </ResponsiveGrid>
-
+---
 <ResponsiveGrid>
-  ### | 현재 학습 및 개선 계획
+  ### 현재 학습 및 개선 계획
 
   - 기존 프로젝트에 테스트 코드 추가 (Unit Test 70% 커버리지 목표)
   - get_it 기반 의존성 주입으로 리팩토링
   - Result 타입 + Sealed Class 기반 에러 핸들링 체계 구축
 </ResponsiveGrid>
 
-### | 웹 프로젝트 *- 부트캠프 팀 프로젝트*
-*2024.02 - 2024.08 (6개월)*\
-*웹 프론트엔드 프로젝트 3개*
+<br />
+<br />
 
 <ResponsiveGrid>
-  ### | 프로젝트
+  ### 웹 팀 프로젝트
 
-  - Mogazoa: 리뷰 플랫폼
-  - Taskuit: 팀 단위 할일 관리 플랫폼
-  - Rolling: 롤링 페이퍼
+  <div className="[&_h2]:mb-0">
+    ## Mogazoa (모가조아)
+    ## Taskuit (태스킷)
+    ## Rolling (롤링)
+    *웹 프론트엔드 프로젝트 3개*
+  </div>
 </ResponsiveGrid>
 
 <ResponsiveGrid>
-  ### | 기술 스택
+  ### 프로젝트
+
+  - Mogazoa : 리뷰 플랫폼 *2024.07 - 2024.08 (약 1개월)*
+  - Taskuit : 팀 단위 할일 관리 플랫폼 *2024.05 - 2024.06 (약 2주)*
+  - Rolling : 롤링 페이퍼 *2024.04 - 2024.04 (약 2주)*
+</ResponsiveGrid>
+---
+<ResponsiveGrid>
+  ### 기술 스택
 
   - React, Next.js, TypeScript
   - Redux, TanStack Query
   - tailwindcss, styled-components
 </ResponsiveGrid>
-
+---
 <ResponsiveGrid>
-  ### | 주요 성과
+  ### 맡은 역할과 성과
 
-  - 공통 UI 컴포넌트 설계와 예외 처리 표준화로 코드 일관성 향상.
-  - 3개 팀 프로젝트에서 평균 기여도 40~46% (커밋 수 기준, 팀원 4-5명)
-  - 전역 상태 관리, 모달· 토스트 시스템 구축으로 상호작용 품질 개선.
+  - 높은 기여도 : 3개 팀 프로젝트에서 평균 기여도 40-46% (커밋 수 기준, 팀원 4-5명)
+  - 공통 컴포넌트 설계 : 재사용 가능한 UI 컴포넌트 구축
+  - 예외 처리 표준화 : 전역 에러 핸들링 및 토스트 알림 시스템 구축
+  - 전역 상태 관리 : Context API와 Custom Hook을 활용한 상태 관리 패턴 구현
 </ResponsiveGrid>
 
----
+<br />
+<br />
 
-## | OTHER EXPERIENCE.
+## 기타 경험.
 *하기 경력 사항은 개발 업무와 무관하지만 저를 판단 할 수 있는 근거로 참고해 주시기를 바랍니다.*
 
 <ResponsiveGrid>
   <div>
-    ### | 정보처리기능사
+    ### 정보처리기능사
     *2025.09 필기 합격*\
     *2025.12 실기 시험 예정*
   </div>
 
   컴퓨터 구조, 운영체제, 데이터베이스 등 CS 기초 이론 학습 및 관련 자격증 취득
 </ResponsiveGrid>
-
+---
 <ResponsiveGrid>
   <div>
-    ### | 한국방송통신대학교
+    ### 한국방송통신대학교
     *컴퓨터과학과*\
     *2025.02 (재학중)*
   </div>
 
   자료구조, 알고리즘, 네트워크 등 체계적 CS 학습
 </ResponsiveGrid>
-
+---
 <ResponsiveGrid>
   <div>
-    ### | 로그마인드
+    ### 로그마인드
     *개인사업자 등록*\
     *2025.07*
   </div>
 
   개인 앱 서비스 정식 출시를 위한 사업자 등록
 </ResponsiveGrid>
-
+---
 <ResponsiveGrid>
   <div>
-    ### | 코드잇 부트캠프
+    ### 코드잇 부트캠프
     *프론트엔드 스프린트 5기&\
     *2024.02 - 2024.08*
   </div>
 
   6개월 프론트엔드 집중 교육 및 3회 팀 프로젝트 수행
 </ResponsiveGrid>
-
+---
 <ResponsiveGrid>
   <div>
-    ### | 청우ENG, 세방테크,
-    ### | GS네오텍
+    ### 청우ENG, 세방테크,
+    ### GS네오텍
     *2017.06 - 2023.07*
   </div>
 
   거주 건축물 환기 설비 및 반도체 공장 배관 설비 시공
-
 </ResponsiveGrid>
