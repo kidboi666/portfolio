@@ -271,35 +271,32 @@ src/
 
 ## 핵심 구현 내용
 
-<ResponsiveGrid columnRatio={1}>
-  <div>
-    ### 1. 서버 사이드 렌더링 (SSR) 최적화
+### 1. 서버 사이드 렌더링 (SSR) 최적화
+<ResponsiveGrid hasCode>
+  ```typescript
+  export const getServerSideProps = async (context: GetServerSidePropsContext) => {
+    const queryClient = new QueryClient();
 
-    ```typescript
-    export const getServerSideProps = async (context: GetServerSidePropsContext) => {
-      const queryClient = new QueryClient();
-
-      // 서버에서 데이터 Prefetch
-      await Promise.all([
+    // 서버에서 데이터 Prefetch
+    await Promise.all([
         queryClient.prefetchQuery(productsService.queryOptions({ order: 'recent' })),
         queryClient.prefetchQuery(productsService.queryOptions({ order: 'rating' })),
         queryClient.prefetchQuery(productsService.queryOptions({ order: 'reviewCount' })),
-      ]);
+    ]);
 
-      return {
-        props: {
-          dehydratedState: dehydrate(queryClient),
-        },
-      };
+    return {
+      props: {
+        dehydratedState: dehydrate(queryClient),
+      },
     };
-    ```
-  </div>
+  };
+  ```
+
+  `queryClient`를 이용하여 서버에서 캐싱된 데이터를 Prefetch
 </ResponsiveGrid>
 ---
-<ResponsiveGrid columnRatio={1}>
-  <div>
-    ### 2. 무한 스크롤 구현
-
+### 2. 무한 스크롤 구현
+<ResponsiveGrid hasCode>
     ```typescript
     const {
       fetchNextPage,
@@ -315,24 +312,22 @@ src/
       }
     }, [inView, hasNextPage, fetchNextPage]);
     ```
-  </div>
+
+  `useInView`를 이용하여 무한 스크롤 구현
 </ResponsiveGrid>
 ---
-<ResponsiveGrid columnRatio={1}>
-  <div>
-    ### 3. OAuth 인증 플로우
-
+### 3. OAuth 인증 플로우
+<ResponsiveGrid hasCode>
     ```text
     Google/Kakao 인가 코드 수신 → idToken 교환 → 백엔드 로그인/회원가입 요청
     → Access Token 쿠키 저장 → 메인 페이지 리다이렉트
     ```
-  </div>
+
+  인증 토큰을 쿠키에 저장하여 로그인 상태 유지
 </ResponsiveGrid>
 ---
-<ResponsiveGrid columnRatio={1}>
-  <div>
-    ### 4. Axios Interceptor를 통한 인증 토큰 관리
-
+### 4. Axios Interceptor를 통한 인증 토큰 관리
+<ResponsiveGrid hasCode>
     ```typescript
     apiInstance.interceptors.request.use((config) => {
       const token = getCookie('accessToken');
@@ -342,13 +337,12 @@ src/
       return config;
     });
     ```
-  </div>
+
+  인증 토큰을 헤더에 추가하여 API 요청
 </ResponsiveGrid>
 ---
-<ResponsiveGrid columnRatio={1}>
-  <div>
-    ### 5. 재사용 가능한 Query Service 패턴
-
+### 5. 재사용 가능한 Query Service 패턴
+<ResponsiveGrid hasCode>
     ```typescript
     const productsService = {
       queryKey: ['products'],
@@ -365,7 +359,8 @@ src/
       }),
     };
     ```
-  </div>
+
+  `productsService`를 통해 캐싱 전략을 정의하고 재사용 가능한 커스텀 훅을 제공
 </ResponsiveGrid>
 
 <br />
