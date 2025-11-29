@@ -15,7 +15,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [platform, setPlatform] = useState<PLATFORM>(initialPlatform);
 
   const handlePlatformChange = (value: string) => {
-    console.log(value);
     if (value === platform) return;
     setPlatform(value as PLATFORM);
   };
